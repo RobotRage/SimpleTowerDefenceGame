@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Placed
   - Unplaced
+  - ValidPlaceLocation
+  - NonValidPlaceLocation
   layers:
   - Default
   - TransparentFX
