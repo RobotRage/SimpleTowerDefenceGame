@@ -4,8 +4,12 @@ using UnityEngine;
 using System;
 using System.Threading;
 using UnityEngine.EventSystems;
+
+//RobotRage's Code
+
 public class TowerPlaceController : MonoBehaviour
 {
+    
     bool placed = false;
 
     //true if tower is over a valid tower placement zone
@@ -24,7 +28,6 @@ public class TowerPlaceController : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        print(collision.tag);
         if (collision.gameObject.tag == "NonValidPlaceLocation")
         {
             NonvalidHitboxCount++;
@@ -36,7 +39,6 @@ public class TowerPlaceController : MonoBehaviour
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        print(collision.tag);
         if (collision.gameObject.tag == "NonValidPlaceLocation")
         {
             NonvalidHitboxCount--;

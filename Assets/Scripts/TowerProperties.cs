@@ -3,14 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
+
+//colby's code
+
 public class TowerProperties : MonoBehaviour
 {
-    //colby's code
 
     //modifier = flat bonus
 
     public float range;
-    public float rangeBase = 1;
+    public float rangeBase = 5;
     public float rangeModifier = 0;
     public float rangeMultiplier = 1;
 
