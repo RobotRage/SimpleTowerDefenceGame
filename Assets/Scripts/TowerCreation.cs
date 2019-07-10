@@ -43,7 +43,7 @@ public class TowerCreation : MonoBehaviour
         {
             //prints the current selected button
             string btnPressed = EventSystem.current.currentSelectedGameObject.name;
-            print(btnPressed);
+            //print(btnPressed);
 
             //check which button was pressed and spawns the appropriate tower
             if (btnPressed == "btnCreateTower_1")
@@ -52,5 +52,4 @@ public class TowerCreation : MonoBehaviour
             }
         }
     }
-
 }

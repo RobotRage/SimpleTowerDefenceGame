@@ -84,7 +84,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   range: 0
-  rangeBase: 2
+  rangeBase: 6
   rangeModifier: 0
   rangeMultiplier: 1
   damage: 0
@@ -95,7 +95,6 @@ MonoBehaviour:
   speedBase: 20
   speedModifier: 0
   speedMultiplier: 1
-  shotCooldown: 100
 --- !u!212 &5300457758251412792
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -161,7 +160,7 @@ GameObject:
   - component: {fileID: 6379951842351570767}
   m_Layer: 0
   m_Name: 100xblock
-  m_TagString: Unplaced
+  m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -175,7 +174,7 @@ Transform:
   m_GameObject: {fileID: 5765118408059193340}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.4, y: 0.4, z: 1}
   m_Children:
   - {fileID: 2000940987457934797}
   m_Father: {fileID: 0}

@@ -1,7 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using System;
+using System.Threading;
+using UnityEngine.EventSystems;
 public class TowerPlaceController : MonoBehaviour
 {
     bool placed = false;
@@ -22,15 +24,25 @@ public class TowerPlaceController : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        print(collision.tag);
         if (collision.gameObject.tag == "NonValidPlaceLocation")
         {
+            NonvalidHitboxCount++;
+        }
+        if (collision.gameObject.tag == "Placed")
+        {           
             NonvalidHitboxCount++;
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
+        print(collision.tag);
         if (collision.gameObject.tag == "NonValidPlaceLocation")
         {
+            NonvalidHitboxCount--;
+        }
+        if (collision.gameObject.tag == "Placed")
+        {        
             NonvalidHitboxCount--;
         }
     }
@@ -68,7 +80,8 @@ public class TowerPlaceController : MonoBehaviour
 
             if(canBePlaced)
             {
-                if(Input.GetMouseButtonDown(0))
+                //if mouse 1 clicked and not clicking a UI button
+                if (Input.GetMouseButtonDown(0) && !EventSystem.current.IsPointerOverGameObject())
                 {
                     placed = true;
                 }
