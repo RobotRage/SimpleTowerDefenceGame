@@ -11,8 +11,16 @@ public class EnemyController : MonoBehaviour
     public int speed = 1;
     bool done = false;
 
+    float baseHp = 100;
+
+    public GameObject GreenHP;
+    public GameObject RedHP;
+
     void Start()
     {
+        GreenHP.transform.localScale = new Vector3(baseHp / 100,1f, 0);
+        RedHP.transform.localScale = new Vector3(baseHp / 100, 1f, 0);
+
         bool searching = true;
         int i = 0;
 
@@ -46,10 +54,23 @@ public class EnemyController : MonoBehaviour
                 targets.RemoveAt(0);
             }
         }
+
+        if(collision.gameObject.tag == "Bullet")
+        {
+            baseHp -= collision.GetComponent<BulletController>().bulletDamage;
+            GreenHP.transform.localScale = new Vector3(baseHp /100, 1f, 0);
+            Destroy(collision.gameObject);
+        }
+
     }
 
     void Update()
     {
+        if(baseHp <=0)
+        {
+            Destroy(gameObject);
+        }
+
         if (!done)
         {
             if (targets.Count == 0)

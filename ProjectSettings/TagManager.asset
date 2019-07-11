@@ -10,6 +10,7 @@ TagManager:
   - NonValidPlaceLocation
   - Tower
   - node
+  - Enemy
   layers:
   - Default
   - TransparentFX

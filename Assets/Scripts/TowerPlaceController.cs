@@ -60,17 +60,19 @@ public class TowerPlaceController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(NonvalidHitboxCount == 0)
+        if (!placed)
         {
-            canBePlaced = true;
-            m_SpriteRenderer.color = Color.white;
+            if (NonvalidHitboxCount == 0)
+            {
+                canBePlaced = true;
+                m_SpriteRenderer.color = Color.white;
+            }
+            else
+            {
+                canBePlaced = false;
+                m_SpriteRenderer.color = col;
+            }
         }
-        else
-        {
-            canBePlaced = false;
-            m_SpriteRenderer.color = col;
-        }
-
         //changed the tower's tag based on if its placed or unplaced
         if (placed)
         {
