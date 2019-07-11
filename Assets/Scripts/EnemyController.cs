@@ -18,6 +18,8 @@ public class EnemyController : MonoBehaviour
 
         //finds all the objects of name node and their index 
         //warning can be infinite loop
+
+        //numbers on node prefab specify order
         while (searching)
         {
             GameObject node = GameObject.Find("node" + i);
