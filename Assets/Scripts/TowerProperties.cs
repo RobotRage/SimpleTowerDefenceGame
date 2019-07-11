@@ -43,6 +43,7 @@ public class TowerProperties : MonoBehaviour
     void Shoot()
     {
         GameObject InstantiatedBullet = Instantiate(Bullet, gameObject.transform.position , transform.rotation);
+        //sets the variable for the dammage on the bullet script to the damage on this script
         InstantiatedBullet.GetComponent<BulletController>().bulletDamage = damage;
     }
 
@@ -95,11 +96,12 @@ public class TowerProperties : MonoBehaviour
             //checks if more than 0 enemies in tower range
             if(EnemiesInRange.Count > 0)
             {
+                //targets the first enemy in the list
                 TargetEnemy = EnemiesInRange[0];
+
+                //rotation code
                 Vector3 targetRotation = TargetEnemy.transform.position - transform.position;
-
                 GameObject parent = transform.parent.gameObject;
-
                 float angle = Mathf.Atan2(targetRotation.y, targetRotation.x ) * Mathf.Rad2Deg;
                 Quaternion rot = Quaternion.AngleAxis(angle, Vector3.forward) * (Quaternion.AngleAxis(rotationOffset, Vector3.forward));
                 parent.transform.rotation = Quaternion.RotateTowards(transform.rotation , rot , Time.deltaTime * TowerRotSpeed);
