@@ -3,8 +3,8 @@
 
 ###TODO###
 
-1) Get all three of us setup with the right Unity Version and github
-2) Create interactive placement
-3) Create basic pathfinding for enemies
-4) Allow drag and drop of towers which show their circular range
-5) Tower AI allowing targetting of first/last unit options within a specific range
+- Get all three of us setup with the right Unity Version and github
+- Create basic pathfinding for enemies (Colby)
+- Tower AI allowing targetting of first/last unit options within a specific range (Robo)
+- GUI
+- Money and economy

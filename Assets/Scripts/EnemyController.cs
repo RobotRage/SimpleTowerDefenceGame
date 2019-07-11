@@ -7,59 +7,67 @@ public class EnemyController : MonoBehaviour
 
     // Colby's code
 
-    public List<GameObject> targets = new List<GameObject>();
-    public int targetIndex = 0;
+    List<GameObject> targets = new List<GameObject>();
     public int speed = 1;
-    public bool done = false;
-    // Start is called before the first frame update
+    bool done = false;
+
     void Start()
     {
         bool searching = true;
-        int index = 0;
+        int i = 0;
+
+        //finds all the objects of name node and their index 
+        //warning can be infinite loop
         while (searching)
         {
-            GameObject node = GameObject.Find("node" + index);
+            GameObject node = GameObject.Find("node" + i);
             if (node != null)
             {
+                //adds node to list
                 targets.Add(node);
-                print("found one");
-                index += 1;
+                i += 1;
             }
             else
             {
                 searching = false;
-                print("found none");
             }
-        }
+        }      
+    }
 
-        print("finished searching, found " + targets.Count);
-
-        if (targets.Count == 0)
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        //if object collides with node, remove it from the list
+        if (collision.gameObject.tag == "node")
         {
-            done = true;
-            print("done!");
+            if (targets.Count > 0)
+            {
+                targets.RemoveAt(0);
+            }
         }
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (!done)
         {
-            if (transform.position != targets[targetIndex].transform.position)
+            if (targets.Count == 0)
             {
-                Vector3 moveDir = (targets[targetIndex].transform.position - transform.position).normalized;
-                transform.position += moveDir * speed * Time.deltaTime;
+                done = true;
             }
             else
             {
-                targetIndex += 1;
-                if (targetIndex + 1 > targets.Count)
-                {
-                    done = true;
-                }
+                //move towards first element int the list
+                //TODO add rotation
+                Vector3 moveDir = (targets[0].transform.position - transform.position).normalized;
+                transform.position += moveDir * speed * Time.deltaTime;
             }
-        }
 
+        }
+        else
+        {
+            //destroy enemy if reachest the end
+            //TODO add check for player loosing hp
+            Destroy(gameObject);
+        }
     }
 }

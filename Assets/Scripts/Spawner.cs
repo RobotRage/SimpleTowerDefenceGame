@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
+    //colby's code
+    
     public GameObject enemy;
-    // Start is called before the first frame update
+    float delay = 2f;
+
     void Start()
     {
         Spawn();
@@ -14,9 +17,10 @@ public class Spawner : MonoBehaviour
     void Spawn()
     {
         Instantiate(enemy, transform.position, transform.rotation);
-        StartCoroutine(Wait(15f));
+        StartCoroutine(Wait(delay));
     }
 
+    //coreroutine
     IEnumerator Wait(float x)
     {
         yield return new WaitForSeconds(x);

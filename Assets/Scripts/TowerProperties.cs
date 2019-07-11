@@ -33,7 +33,6 @@ public class TowerProperties : MonoBehaviour
     void Shoot()
     {
         //instantiate bullet here
-        print("pew");
     }
 
     //call this whenever there is a ingame buff or nerf that needs to change the properties of the tower

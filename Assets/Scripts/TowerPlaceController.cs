@@ -48,7 +48,15 @@ public class TowerPlaceController : MonoBehaviour
             NonvalidHitboxCount--;
         }
     }
-
+    IEnumerator EndFrame()
+    {
+        yield return new WaitForEndOfFrame();
+        if (canBePlaced)
+        {
+            //if mouse 1 clicked and not clicking a UI button
+            placed = true;
+        }
+    }
     // Update is called once per frame
     void Update()
     {
@@ -79,14 +87,9 @@ public class TowerPlaceController : MonoBehaviour
             mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             //sets the tower position to the mouse x and y position
             gameObject.transform.position = new Vector3(mousePos.x, mousePos.y, 0);
-
-            if(canBePlaced)
+            if (Input.GetMouseButtonDown(0) && !EventSystem.current.IsPointerOverGameObject())
             {
-                //if mouse 1 clicked and not clicking a UI button
-                if (Input.GetMouseButtonDown(0) && !EventSystem.current.IsPointerOverGameObject())
-                {
-                    placed = true;
-                }
+                StartCoroutine(EndFrame());
             }
         }
     }
