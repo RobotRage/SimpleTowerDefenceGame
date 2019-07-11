@@ -8,6 +8,8 @@ TagManager:
   - Unplaced
   - ValidPlaceLocation
   - NonValidPlaceLocation
+  - Tower
+  - node
   layers:
   - Default
   - TransparentFX
