@@ -11,6 +11,7 @@ public class TowerPlaceController : MonoBehaviour
 {
     
     bool placed = false;
+    public int towerCost;
 
     //true if tower is over a valid tower placement zone
     bool canBePlaced = true;
@@ -55,6 +56,7 @@ public class TowerPlaceController : MonoBehaviour
         {
             //if mouse 1 clicked and not clicking a UI button
             placed = true;
+            GlobalVars.G_Money -= towerCost;
         }
     }
     // Update is called once per frame

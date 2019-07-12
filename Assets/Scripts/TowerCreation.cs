@@ -11,10 +11,34 @@ public class TowerCreation : MonoBehaviour
     //new towers can be added in unity inspector on the "TowerSpawn" object
     public GameObject[] Towers;
 
+    public class TowerStats
+    {
+        public string TowerName;
+        public GameObject TowerObj;
+        public int TowerCost;
+    }
+
+
+    //list of all the tower class objects
+    List<TowerStats> TowerClasses = new List<TowerStats>();
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        //YOU MUST INITIALISE TOWERS HERE
+        //TOWER NAME MUST BE THE SAME AS THE BUTTON NAME
+
+        TowerStats BaseTower = new TowerStats();
+        BaseTower.TowerName = "btnCreateTower_1";
+        BaseTower.TowerCost = 10;
+        BaseTower.TowerObj = Towers[0];
+        TowerClasses.Add(BaseTower);
+
+        TowerStats MoneyGenTower = new TowerStats();
+        MoneyGenTower.TowerName = "btnCreateTower_MoneyGen";
+        MoneyGenTower.TowerCost = 100;
+        MoneyGenTower.TowerObj = Towers[1];
+        TowerClasses.Add(MoneyGenTower);
     }
 
     // Update is called once per frame
@@ -39,6 +63,7 @@ public class TowerCreation : MonoBehaviour
                 Destroy(tower);
             }
         }
+
         //if there are no unplaced towers
         else
         {
@@ -46,10 +71,19 @@ public class TowerCreation : MonoBehaviour
             string btnPressed = EventSystem.current.currentSelectedGameObject.name;
             //print(btnPressed);
 
-            //check which button was pressed and spawns the appropriate tower
-            if (btnPressed == "btnCreateTower_1")
+            //loops through the class objects and matches the button pressed with the specification in the initialisation
+            foreach(TowerStats TempObj in TowerClasses)
             {
-                Instantiate(Towers[0], new Vector3(0, 0, 0), Quaternion.identity);
+                if(TempObj.TowerName == btnPressed)
+                {
+                    //check if the cost of the tower is inferior to the current money
+                    if(GlobalVars.G_Money >= TempObj.TowerCost)
+                    {
+                        //instatiate tower and pass cost to the tower place script
+                        GameObject tower = Instantiate(TempObj.TowerObj, new Vector3(0, 0, 0), Quaternion.identity);
+                        tower.GetComponent<TowerPlaceController>().towerCost = TempObj.TowerCost;
+                    }
+                }
             }
         }
     }

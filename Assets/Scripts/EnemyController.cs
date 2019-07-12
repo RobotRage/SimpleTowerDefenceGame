@@ -11,7 +11,7 @@ public class EnemyController : MonoBehaviour
     public int speed = 1;
     bool done = false;
 
-    float baseHp = 100;
+    float baseHp = 50;
 
     public GameObject GreenHP;
     public GameObject RedHP;
@@ -72,6 +72,7 @@ public class EnemyController : MonoBehaviour
     {
         if(baseHp <=0)
         {
+            GlobalVars.G_Money += 20;
             Destroy(gameObject);
         }
 
