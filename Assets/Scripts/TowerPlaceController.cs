@@ -11,6 +11,7 @@ public class TowerPlaceController : MonoBehaviour
 {
     
     bool placed = false;
+    bool flagset = false;
     public int towerCost;
 
     //true if tower is over a valid tower placement zone
@@ -75,14 +76,27 @@ public class TowerPlaceController : MonoBehaviour
                 m_SpriteRenderer.color = col;
             }
         }
-        //changed the tower's tag based on if its placed or unplaced
-        if (placed)
+
+        if (!flagset)
         {
-            gameObject.tag = "Placed";
-        }
-        else
-        {
-            gameObject.tag = "Unplaced";
+            //changed the tower's tag based on if its placed or unplaced
+            if (placed)
+            {
+                if (gameObject.transform.GetChild(0).GetComponent<SpriteRenderer>() != null)
+                {
+                    //turn off the circle sprite when tower is placed
+                    gameObject.transform.GetChild(0).GetComponent<SpriteRenderer>().enabled = false;
+                }
+
+                gameObject.tag = "Placed";
+                // Stop the tag from being updated or checked again
+                // This also serves to allow the circle to be enabled in the future
+                flagset = true;
+            }
+            else
+            {
+                gameObject.tag = "Unplaced";
+            }
         }
 
         if (!placed)

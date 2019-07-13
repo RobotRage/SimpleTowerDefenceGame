@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 
 
-//colby's code
+// Colby's Code
 
 public class TowerProperties : MonoBehaviour
 {
@@ -103,8 +103,6 @@ public class TowerProperties : MonoBehaviour
     {  
         if (transform.parent.tag == "Placed") // checks tag of parent object
         {
-            //turn off the circle sprite when tower is placed
-            gameObject.GetComponent<SpriteRenderer>().enabled = false;
 
             //checks if more than 0 enemies in tower range
             if(EnemiesInRange.Count > 0)
