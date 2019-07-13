@@ -69,7 +69,7 @@ public class EnemyController : MonoBehaviour
     }
 
     void Update()
-    {
+    {        
         if(baseHp <=0)
         {
             GlobalVars.G_Money += 20;
