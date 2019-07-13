@@ -12,6 +12,7 @@ TagManager:
   - node
   - Enemy
   - Bullet
+  - Boundry
   layers:
   - Default
   - TransparentFX

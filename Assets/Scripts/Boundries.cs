@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class Boundries : MonoBehaviour
 {
-    void OnTriggerEnter(Collider other)
+    void OnTriggerEnter2D(Collider2D other)
     {
-        Destroy(other.gameObject);
+        if (other.gameObject.tag != "Boundry")
+        {
+            Destroy(other.gameObject);
+        }
     }
 }
