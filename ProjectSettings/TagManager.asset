@@ -21,7 +21,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - tilemap
   - 
   - 
   - 
@@ -46,6 +46,12 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: tilemap
+    uniqueID: 3063077635
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: New Layer
+    uniqueID: 3030757465
     locked: 0

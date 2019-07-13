@@ -42,9 +42,22 @@ public class TowerProperties : MonoBehaviour
 
     void Shoot()
     {
-        GameObject InstantiatedBullet = Instantiate(Bullet, gameObject.transform.position , transform.rotation);
-        //sets the variable for the dammage on the bullet script to the damage on this script
+        GameObject InstantiatedBullet;
+        InstantiatedBullet = Instantiate(Bullet, gameObject.transform.position, Quaternion.identity);
         InstantiatedBullet.GetComponent<BulletController>().bulletDamage = damage;
+        InstantiatedBullet.GetComponent<BulletController>().Direction = new Vector3(0,1,0);
+
+        InstantiatedBullet = Instantiate(Bullet, gameObject.transform.position, Quaternion.identity);
+        InstantiatedBullet.GetComponent<BulletController>().bulletDamage = damage;
+        InstantiatedBullet.GetComponent<BulletController>().Direction = new Vector3(0, -1, 0);
+
+        InstantiatedBullet = Instantiate(Bullet, gameObject.transform.position, Quaternion.identity);
+        InstantiatedBullet.GetComponent<BulletController>().bulletDamage = damage;
+        InstantiatedBullet.GetComponent<BulletController>().Direction = new Vector3(1, 0, 0);
+
+        InstantiatedBullet = Instantiate(Bullet, gameObject.transform.position, Quaternion.identity);
+        InstantiatedBullet.GetComponent<BulletController>().bulletDamage = damage;
+        InstantiatedBullet.GetComponent<BulletController>().Direction = new Vector3(-1, 0, 0);
     }
 
     //call this whenever there is a ingame buff or nerf that needs to change the properties of the tower
@@ -100,11 +113,14 @@ public class TowerProperties : MonoBehaviour
                 TargetEnemy = EnemiesInRange[0];
 
                 //rotation code
+
+                /*
                 Vector3 targetRotation = TargetEnemy.transform.position - transform.position;
                 GameObject parent = transform.parent.gameObject;
                 float angle = Mathf.Atan2(targetRotation.y, targetRotation.x ) * Mathf.Rad2Deg;
                 Quaternion rot = Quaternion.AngleAxis(angle, Vector3.forward) * (Quaternion.AngleAxis(rotationOffset, Vector3.forward));
                 parent.transform.rotation = Quaternion.RotateTowards(transform.rotation , rot , Time.deltaTime * TowerRotSpeed);
+                */
 
                 //if previous corroutine is done, call another corroutine
                 if (!coolDownToggle)

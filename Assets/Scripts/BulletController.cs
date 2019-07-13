@@ -5,7 +5,7 @@ using UnityEngine;
 public class BulletController : MonoBehaviour
 {
     public float bulletDamage;
-    
+    public Vector3 Direction;
     float thrust = 9f;
 
     // Start is called before the first frame update
@@ -17,6 +17,6 @@ public class BulletController : MonoBehaviour
     void FixedUpdate()
     {
         //moveforward
-        transform.Translate(Vector3.up * thrust * Time.deltaTime);
+        transform.Translate(Direction * thrust * Time.deltaTime);
     }
 }
