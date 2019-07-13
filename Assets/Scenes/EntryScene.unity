@@ -131,7 +131,7 @@ GameObject:
   - component: {fileID: 68338213}
   - component: {fileID: 68338215}
   - component: {fileID: 68338214}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: SecondLevelGround
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -882,7 +882,7 @@ GameObject:
   - component: {fileID: 298894108}
   - component: {fileID: 298894110}
   - component: {fileID: 298894109}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: EnemyPath
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2436,7 +2436,7 @@ GameObject:
   m_Component:
   - component: {fileID: 483683836}
   - component: {fileID: 483683835}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Grid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2529,7 +2529,7 @@ GameObject:
   - component: {fileID: 507428948}
   - component: {fileID: 507428947}
   - component: {fileID: 507428949}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: water
   m_TagString: NonValidPlaceLocation
   m_Icon: {fileID: 0}
@@ -7777,7 +7777,7 @@ GameObject:
   - component: {fileID: 674549268}
   - component: {fileID: 674549270}
   - component: {fileID: 674549269}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: special
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8860,7 +8860,7 @@ GameObject:
   - component: {fileID: 1239465609}
   - component: {fileID: 1239465608}
   - component: {fileID: 1239465607}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: ground
   m_TagString: ValidPlaceLocation
   m_Icon: {fileID: 0}

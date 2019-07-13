@@ -44,6 +44,16 @@ public class TowerCreation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetMouseButtonDown(1))
+        {
+            RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
+
+            if (hit.collider != null)
+            {
+                //Debug.Log("Target: " + hit.collider.gameObject.name);
+            }
+
+        }
     }
 
     //function is called when any button is pressed (must be assigned when new button is created)

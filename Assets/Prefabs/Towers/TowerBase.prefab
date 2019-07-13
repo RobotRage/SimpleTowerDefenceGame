@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5268063638112248965}
   - component: {fileID: 4314169665618048224}
   - component: {fileID: 378268530930093079}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: 100xblock (7)
   m_TagString: NonValidPlaceLocation
   m_Icon: {fileID: 0}
@@ -121,7 +121,7 @@ GameObject:
   - component: {fileID: 5957630005203703909}
   - component: {fileID: 4693650954524281291}
   - component: {fileID: 5300457758251412792}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Radius
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -268,7 +268,7 @@ GameObject:
   - component: {fileID: 7957480184360847778}
   - component: {fileID: 6379951842351570767}
   m_Layer: 0
-  m_Name: 100xblock
+  m_Name: TowerBase
   m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
