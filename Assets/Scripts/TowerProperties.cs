@@ -40,8 +40,15 @@ public class TowerProperties : MonoBehaviour
 
     public GameObject Bullet;
 
+    GameObject parent;
+    private Animator parentAnim;
+
     void Shoot()
     {
+
+
+        parentAnim.SetTrigger("Shoot");
+
         GameObject InstantiatedBullet;
         InstantiatedBullet = Instantiate(Bullet, gameObject.transform.position, Quaternion.identity);
         InstantiatedBullet.GetComponent<BulletController>().bulletDamage = damage;
@@ -73,9 +80,9 @@ public class TowerProperties : MonoBehaviour
 
     //IEnumerator is another thread which delays the execution of code
     IEnumerator Wait(float x)
-    {
+    {      
+        Shoot();      
         yield return new WaitForSeconds(x);
-        Shoot();
         coolDownToggle = false;
     }
 
@@ -133,5 +140,9 @@ public class TowerProperties : MonoBehaviour
     void Start()
     {
         updateStats();
+        parent = transform.parent.gameObject;
+        parentAnim = parent.GetComponent<Animator>();
+
+
     }
 }

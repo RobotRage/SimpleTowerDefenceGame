@@ -192,6 +192,7 @@ GameObject:
   - component: {fileID: 7957480184360847778}
   - component: {fileID: 6379951842351570767}
   - component: {fileID: -267195691929043611}
+  - component: {fileID: 76458101}
   m_Layer: 0
   m_Name: MoneyGen
   m_TagString: Tower
@@ -208,7 +209,7 @@ Transform:
   m_GameObject: {fileID: 5765118408059193340}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 544.43, y: 41.71, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2478397450415417744}
   m_Father: {fileID: 0}
@@ -253,7 +254,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 91b701b847e479b439c39dd36a5b3ce7, type: 3}
+  m_Sprite: {fileID: -5372515026785527823, guid: 4b3cee937c0e44b4a880e2ab8e490aaf,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -294,7 +296,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 1.5, y: 1.5}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -336,3 +338,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4beda6a5ce0cab14dacd66480500f208, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &76458101
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5765118408059193340}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d6aa1c40a9a007443b09bdd78e7d2b21, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
