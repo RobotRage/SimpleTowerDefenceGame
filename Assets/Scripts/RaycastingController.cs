@@ -7,13 +7,16 @@ public class RaycastingController : MonoBehaviour
 
     // Colby's Code
 
-    GameObject lasttouched = null;
+    GameObject lasttouched;
     // Start is called before the first frame update
     void Start()
     {
         
     }
-
+    void OnBecameInvisible()
+    {
+        Destroy(gameObject);
+    }
     // Update is called once per frame
     void Update()
     {
@@ -44,7 +47,9 @@ public class RaycastingController : MonoBehaviour
                 if (Input.GetMouseButtonDown(1))
                 {
                     // Give back half of the original cost
+                   
                     GlobalVars.G_Money += hit.collider.gameObject.GetComponent<TowerPlaceController>().towerCost / 2;
+                    Destroy(hit.collider.gameObject);
                 }
             }
         }

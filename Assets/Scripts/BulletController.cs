@@ -16,7 +16,6 @@ public class BulletController : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        //moveforward
         transform.Translate(Direction * thrust * Time.deltaTime);
     }
 }
