@@ -31,7 +31,20 @@ public class EnemyController : MonoBehaviour
         //numbers on node prefab specify order
         while (searching)
         {
-            GameObject node = GameObject.Find("node" + i);
+            GameObject node;
+            if (gameObject.tag == "Enemy")
+            {
+                 node = GameObject.Find("node" + i);
+            }
+            else if (gameObject.tag == "EnemyRight")
+            {
+                 node = GameObject.Find("node_right" + i);
+            }
+            else
+            {
+                 node = GameObject.Find("node_left" + i);
+            }
+            
             if (node != null)
             {
                 //adds node to list

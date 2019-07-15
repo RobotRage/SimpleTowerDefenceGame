@@ -88,14 +88,14 @@ public class TowerProperties : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.tag == "Enemy")
+        if (collision.tag == "Enemy" | collision.tag == "EnemyLeft" | collision.tag == "EnemyRight")
         {
             EnemiesInRange.Add(collision.gameObject);
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.tag == "Enemy")
+        if (collision.tag == "Enemy" | collision.tag == "EnemyLeft" | collision.tag == "EnemyRight")
         {
             EnemiesInRange.Remove(collision.gameObject);
         }

@@ -13,6 +13,8 @@ TagManager:
   - Enemy
   - Bullet
   - Boundry
+  - EnemyLeft
+  - EnemyRight
   layers:
   - Default
   - TransparentFX

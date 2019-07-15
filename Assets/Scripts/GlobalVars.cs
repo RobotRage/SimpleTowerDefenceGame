@@ -20,7 +20,7 @@ public class GlobalVars : MonoBehaviour
     /// 
     /// </TODO>
 
-    public static int G_Money = 40;
+    public static int G_Money = 200;
 
     // Start is called before the first frame update
     void Start()

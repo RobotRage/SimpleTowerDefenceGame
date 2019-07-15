@@ -9,6 +9,8 @@ public class Spawner : MonoBehaviour
     public GameObject enemy;
     float delay = 3.5f;
 
+    
+
     void Start()
     {
         Spawn();
@@ -16,7 +18,17 @@ public class Spawner : MonoBehaviour
 
     void Spawn()
     {
-        Instantiate(enemy, transform.position, transform.rotation);
+        GameObject obj = Instantiate(enemy, transform.position, transform.rotation);
+
+        if (gameObject.name == "SpawnerLeft")
+        {
+            obj.tag = "EnemyLeft";
+        }
+        if (gameObject.name == "SpawnerRight")
+        {
+            obj.tag = "EnemyRight";
+        }
+
         StartCoroutine(Wait(delay));
     }
 
