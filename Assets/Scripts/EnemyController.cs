@@ -16,6 +16,7 @@ public class EnemyController : MonoBehaviour
     public GameObject GreenHP;
     public GameObject RedHP;
 
+    string WhichRow;
     void Start()
     {
         //sets the hp bars lengths to the baseHp value
@@ -35,14 +36,17 @@ public class EnemyController : MonoBehaviour
             if (gameObject.tag == "Enemy")
             {
                  node = GameObject.Find("node" + i);
+                WhichRow = "Mid";
             }
             else if (gameObject.tag == "EnemyRight")
             {
                  node = GameObject.Find("node_right" + i);
+                WhichRow = "Right";
             }
             else
             {
                  node = GameObject.Find("node_left" + i);
+                WhichRow = "Left";
             }
             
             if (node != null)
@@ -108,6 +112,18 @@ public class EnemyController : MonoBehaviour
         {
             //destroy enemy if reachest the end
             //TODO add check for player loosing hp
+            if(WhichRow == "Mid")
+            {
+                GlobalVars.Hp_Mid -= 100;
+            }
+            else if(WhichRow == "Right")
+            {
+                GlobalVars.Hp_Right -= 100;
+            }
+            else
+            {
+                GlobalVars.Hp_Left -= 100;
+            }
             Destroy(gameObject);
         }
     }

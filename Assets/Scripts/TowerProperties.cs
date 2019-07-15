@@ -13,20 +13,20 @@ public class TowerProperties : MonoBehaviour
 
     public float range;
     public float rangeBase = 5;
-    public float rangeModifier = 0;
-    public float rangeMultiplier = 1;
+     float rangeModifier = 0;
+     float rangeMultiplier = 1;
 
     public float damage;
     public float damageBase = 10;
-    public float damageModifier = 0;
-    public float damageMultiplier = 1;
+     float damageModifier = 0;
+     float damageMultiplier = 1;
 
-    public float speed; // shots per minute
-    public float speedBase = 20;
-    public float speedModifier = 0;
-    public float speedMultiplier = 1;
+     float speed; // shots per minute
+     float speedBase = 20;
+     float speedModifier = 0;
+     float speedMultiplier = 1;
 
-    float shotCooldown = 1; // seconds until next shot
+    public float shotCooldown = 1; // seconds until next shot
 
     bool coolDownToggle = false;
 
@@ -74,8 +74,8 @@ public class TowerProperties : MonoBehaviour
         gameObject.transform.localScale = new Vector3(range + 1, range + 1, 1);
 
         range = (rangeBase * rangeMultiplier) + rangeModifier;        
-        damage = (damageBase * damageMultiplier) + damageModifier;
-        speed = (speedBase * speedMultiplier) + speedModifier;
+        damage = ((damageBase * damageMultiplier) + damageModifier) / GlobalVars.DebuffDamage;
+        speed = ((speedBase * speedMultiplier) + speedModifier);
     }
 
     //IEnumerator is another thread which delays the execution of code
@@ -131,7 +131,7 @@ public class TowerProperties : MonoBehaviour
                 if (!coolDownToggle)
                 {
                     coolDownToggle = true;
-                    StartCoroutine(Wait(shotCooldown));
+                    StartCoroutine(Wait(shotCooldown * GlobalVars.DebuffShotSpeed));
                 }
             }
         }

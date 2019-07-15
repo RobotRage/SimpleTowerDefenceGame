@@ -22,6 +22,13 @@ public class GlobalVars : MonoBehaviour
 
     public static int G_Money = 200;
 
+    public static float Hp_Left = 500;
+    public static float Hp_Right = 500;
+    public static float Hp_Mid = 1000;
+
+    public static float DebuffDamage = 1;
+    public static float DebuffShotSpeed = 1;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -31,6 +38,17 @@ public class GlobalVars : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(Hp_Mid <= 0)
+        {
+            print("Game over man, game over");
+        }
+        if(Hp_Left <= 0)
+        {
+            DebuffDamage = 2;
+        }
+        if (Hp_Right <= 0)
+        {
+            DebuffShotSpeed = 2;
+        }
     }
 }
