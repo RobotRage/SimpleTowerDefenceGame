@@ -58,3 +58,6 @@ TagManager:
   - name: New Layer
     uniqueID: 3030757465
     locked: 0
+  - name: GUI
+    uniqueID: 3454883613
+    locked: 0

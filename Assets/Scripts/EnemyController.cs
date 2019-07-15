@@ -16,12 +16,14 @@ public class EnemyController : MonoBehaviour
     public GameObject GreenHP;
     public GameObject RedHP;
 
+    public GameObject explosionObj;
+
     string WhichRow;
     void Start()
     {
         //sets the hp bars lengths to the baseHp value
-        GreenHP.transform.localScale = new Vector3(baseHp / 100,1f, 0);
-        RedHP.transform.localScale = new Vector3(baseHp / 100, 1f, 0);
+        GreenHP.transform.localScale = new Vector3(baseHp / 100, 3f, 0);
+        RedHP.transform.localScale = new Vector3(baseHp / 100, 3f, 0);
 
         bool searching = true;
         int i = 0;
@@ -75,10 +77,13 @@ public class EnemyController : MonoBehaviour
 
         if(collision.gameObject.tag == "Bullet")
         {
+            Instantiate(explosionObj, gameObject.transform.position, gameObject.transform.rotation);
+
+
             //reduces hp based on the bullet damage on the BulletController
             baseHp -= collision.GetComponent<BulletController>().bulletDamage;
             //reduces the HpBar length based on damage taken
-            GreenHP.transform.localScale = new Vector3(baseHp /100, 1f, 0);
+            GreenHP.transform.localScale = new Vector3(baseHp /100, 3f, 0);
             //destroys the bullet
             Destroy(collision.gameObject);
         }
