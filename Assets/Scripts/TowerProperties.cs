@@ -8,7 +8,7 @@ using UnityEngine.EventSystems;
 
 public class TowerProperties : MonoBehaviour
 {
-
+    public int level = 1;
     //modifier = flat bonus
 
     public float range;
@@ -21,11 +21,7 @@ public class TowerProperties : MonoBehaviour
      float damageModifier = 0;
      float damageMultiplier = 1;
 
-     float speed; // shots per minute
-     float speedBase = 20;
-     float speedModifier = 0;
-     float speedMultiplier = 1;
-
+    float shotCooldownBase = 1;
     public float shotCooldown = 1; // seconds until next shot
 
     bool coolDownToggle = false;
@@ -73,9 +69,16 @@ public class TowerProperties : MonoBehaviour
         //changes the radius of the range circle based on the range
         gameObject.transform.localScale = new Vector3(range + 1, range + 1, 1);
 
+        damageMultiplier = (level + 1) / 2;
+
+        if(shotCooldown > 0.5)
+        {
+            shotCooldown = shotCooldownBase - (level / 10);
+        }
+
+
         range = (rangeBase * rangeMultiplier) + rangeModifier;        
         damage = ((damageBase * damageMultiplier) + damageModifier) / GlobalVars.DebuffDamage;
-        speed = ((speedBase * speedMultiplier) + speedModifier);
     }
 
     //IEnumerator is another thread which delays the execution of code

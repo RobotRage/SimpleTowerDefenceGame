@@ -20,7 +20,7 @@ public class GlobalVars : MonoBehaviour
     /// 
     /// </TODO>
 
-    public static int G_Money = 200;
+    public static int G_Money = 9999;
 
     public static float Hp_Left = 500;
     public static float Hp_Right = 500;
@@ -28,6 +28,8 @@ public class GlobalVars : MonoBehaviour
 
     public static float DebuffDamage = 1;
     public static float DebuffShotSpeed = 1;
+
+    public static GameObject CurrentlySelected;
 
     // Start is called before the first frame update
     void Start()

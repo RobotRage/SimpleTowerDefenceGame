@@ -6,7 +6,7 @@ public class RaycastingController : MonoBehaviour
 {
 
     // Colby's Code
-
+    public GameObject InfoBox;
     GameObject lasttouched;
     // Start is called before the first frame update
     void Start()
@@ -23,7 +23,16 @@ public class RaycastingController : MonoBehaviour
         // Create a new ray
         RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
 
+        if(Input.GetMouseButtonDown(0) && hit.collider != null)
+        {
+                GlobalVars.CurrentlySelected = hit.collider.gameObject;
+                InfoBox.GetComponent<InfoControllertxt>().OnClickTower();
 
+        }
+        if(Input.GetMouseButtonDown(0) && hit.collider == null)
+        {
+            //GlobalVars.CurrentlySelected = null;
+        }
         // Checks if ray hit something
         if (hit.collider != null)
         {

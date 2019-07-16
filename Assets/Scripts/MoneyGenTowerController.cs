@@ -8,6 +8,7 @@ public class MoneyGenTowerController : MonoBehaviour
     int moneyBoost = 1;
     int tickrateSeconds = 1;
 
+    public int level = 1;
     void Start()
     {
         
@@ -19,6 +20,7 @@ public class MoneyGenTowerController : MonoBehaviour
     IEnumerator Moneytimer(int moneyBoost, int tick)
     {
         yield return new WaitForSeconds(tick);
+        moneyBoost = level;
         GlobalVars.G_Money += moneyBoost;
         toggleCoreRoutine = false;
 
