@@ -21,27 +21,24 @@ public class InfoControllertxt : MonoBehaviour
         if(GlobalVars.CurrentlySelected != null)
         {
             if (GlobalVars.CurrentlySelected.name == "TowerBase(Clone)" | GlobalVars.CurrentlySelected.name == "TowerBase" && GlobalVars.G_Money >= levelAttack * 500)
-            {
-               
+            {            
                 GlobalVars.G_Money -= levelAttack * 500;
                 GlobalVars.CurrentlySelected.GetComponentInChildren<TowerProperties>().level++;
-                txt.text = GlobalVars.CurrentlySelected.name + "has been upgraded to level " + (GlobalVars.CurrentlySelected.GetComponentInChildren<TowerProperties>().level);
+                txt.text = GlobalVars.CurrentlySelected.name + " has been upgraded to level " + (GlobalVars.CurrentlySelected.GetComponentInChildren<TowerProperties>().level);
             }
 
             if (GlobalVars.CurrentlySelected.name == "MoneyGen(Clone)" | GlobalVars.CurrentlySelected.name == "MoneyGen" && GlobalVars.G_Money >= levelPasive * 600)
             {
                 GlobalVars.G_Money -= levelAttack * 600;
                 GlobalVars.CurrentlySelected.GetComponent<MoneyGenTowerController>().level++;
-                txt.text = GlobalVars.CurrentlySelected.name + "has been upgraded to level " + (GlobalVars.CurrentlySelected.GetComponent<MoneyGenTowerController>().level);
+                txt.text = GlobalVars.CurrentlySelected.name + " has been upgraded to level " + (GlobalVars.CurrentlySelected.GetComponent<MoneyGenTowerController>().level);
             }
-
         }
 
         upgradeButton.SetActive(false);
     }
     public void OnClickTower()
     {
-
         if (GlobalVars.CurrentlySelected != null)
         {
             if (GlobalVars.CurrentlySelected.tag == "Placed")
@@ -50,12 +47,12 @@ public class InfoControllertxt : MonoBehaviour
                 if (GlobalVars.CurrentlySelected.name == "TowerBase(Clone)")
                 {
                     levelAttack = GlobalVars.CurrentlySelected.GetComponentInChildren<TowerProperties>().level;
-                    txt.text = "Upgrade basic shoot to level "+(levelAttack+1)+"for " + levelAttack * 500 + "$? click hammer button";
+                    txt.text = "Upgrade basic shoot to level "+(levelAttack+1)+" for " + levelAttack * 500 + "$? click hammer button";
                 }
                 if (GlobalVars.CurrentlySelected.name == "MoneyGen(Clone)")
                 {
                     levelPasive = GlobalVars.CurrentlySelected.GetComponent<MoneyGenTowerController>().level;
-                    txt.text = "Upgrade Gold generator to level "+(levelPasive+1)+"for "+ levelPasive * 600 +"$? click hammer button";
+                    txt.text = "Upgrade Gold generator to level "+(levelPasive+1)+" for "+ levelPasive * 600 +"$? click hammer button";
                 }
             }
         }
