@@ -29,7 +29,7 @@ public class InfoControllertxt : MonoBehaviour
 
             if (GlobalVars.CurrentlySelected.name == "MoneyGen(Clone)" | GlobalVars.CurrentlySelected.name == "MoneyGen" && GlobalVars.G_Money >= levelPasive * 600)
             {
-                GlobalVars.G_Money -= levelAttack * 600;
+                GlobalVars.G_Money -= levelPasive * 600;
                 GlobalVars.CurrentlySelected.GetComponent<MoneyGenTowerController>().level++;
                 txt.text = GlobalVars.CurrentlySelected.name + " has been upgraded to level " + (GlobalVars.CurrentlySelected.GetComponent<MoneyGenTowerController>().level);
             }
@@ -71,6 +71,10 @@ public class InfoControllertxt : MonoBehaviour
         if (btn.name == "btnCreateTower_MoneyGen")
         {
            txt.text = "Tower that generates income every second";
+        }
+        if (btn.name == "btnCreateCannon")
+        {
+            txt.text = "Cannon only shoots forward, massive range and damage";
         }
     }
     // Update is called once per frame

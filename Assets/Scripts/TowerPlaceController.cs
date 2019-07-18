@@ -9,7 +9,7 @@ using UnityEngine.EventSystems;
 
 public class TowerPlaceController : MonoBehaviour
 {
-
+    GameObject minimiseGUI;
     
     bool placed = false;
     bool flagset = false;

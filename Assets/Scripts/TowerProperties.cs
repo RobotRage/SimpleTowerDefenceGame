@@ -41,35 +41,59 @@ public class TowerProperties : MonoBehaviour
 
     void Shoot()
     {
-
+        GameObject InstantiatedBullet;
 
         parentAnim.SetTrigger("Shoot");
+        if(parent.name == "TowerBase(Clone)")
+        {
+            InstantiatedBullet = Instantiate(Bullet, gameObject.transform.position, Quaternion.identity);
+            InstantiatedBullet.GetComponent<BulletController>().bulletDamage = damage;
+            InstantiatedBullet.GetComponent<BulletController>().Direction = new Vector3(0, 1, 0);
 
-        GameObject InstantiatedBullet;
-        InstantiatedBullet = Instantiate(Bullet, gameObject.transform.position, Quaternion.identity);
-        InstantiatedBullet.GetComponent<BulletController>().bulletDamage = damage;
-        InstantiatedBullet.GetComponent<BulletController>().Direction = new Vector3(0,1,0);
+            InstantiatedBullet = Instantiate(Bullet, gameObject.transform.position, Quaternion.identity);
+            InstantiatedBullet.GetComponent<BulletController>().bulletDamage = damage;
+            InstantiatedBullet.GetComponent<BulletController>().Direction = new Vector3(0, -1, 0);
 
-        InstantiatedBullet = Instantiate(Bullet, gameObject.transform.position, Quaternion.identity);
-        InstantiatedBullet.GetComponent<BulletController>().bulletDamage = damage;
-        InstantiatedBullet.GetComponent<BulletController>().Direction = new Vector3(0, -1, 0);
+            InstantiatedBullet = Instantiate(Bullet, gameObject.transform.position, Quaternion.identity);
+            InstantiatedBullet.GetComponent<BulletController>().bulletDamage = damage;
+            InstantiatedBullet.GetComponent<BulletController>().Direction = new Vector3(1, 0, 0);
 
-        InstantiatedBullet = Instantiate(Bullet, gameObject.transform.position, Quaternion.identity);
-        InstantiatedBullet.GetComponent<BulletController>().bulletDamage = damage;
-        InstantiatedBullet.GetComponent<BulletController>().Direction = new Vector3(1, 0, 0);
+            InstantiatedBullet = Instantiate(Bullet, gameObject.transform.position, Quaternion.identity);
+            InstantiatedBullet.GetComponent<BulletController>().bulletDamage = damage;
+            InstantiatedBullet.GetComponent<BulletController>().Direction = new Vector3(-1, 0, 0);
+        }
+        if(parent.name == "Cannons(Clone)")
+        {
+            InstantiatedBullet = Instantiate(Bullet, gameObject.transform.position, Quaternion.identity);
+            InstantiatedBullet.GetComponent<BulletController>().bulletDamage = damage;
+            InstantiatedBullet.GetComponent<BulletController>().Direction = new Vector3(0, 1, 0);
+        }
+ 
 
-        InstantiatedBullet = Instantiate(Bullet, gameObject.transform.position, Quaternion.identity);
-        InstantiatedBullet.GetComponent<BulletController>().bulletDamage = damage;
-        InstantiatedBullet.GetComponent<BulletController>().Direction = new Vector3(-1, 0, 0);
     }
 
     //call this whenever there is a ingame buff or nerf that needs to change the properties of the tower
     void updateStats()
     {
-        //changes the radius of the range circle based on the range
         gameObject.transform.localScale = new Vector3(range + 1, range + 1, 1);
 
-        damageMultiplier = (level + 1) / 2;
+        if (parent != null)
+        {
+            if(parent.name == "TowerBase(Clone)")
+            {
+                damageMultiplier = (level + 1) / 2;
+            }
+            if (parent.name == "Cannons(Clone)")
+            {
+                damageMultiplier = (level + 3f) / 2;
+                shotCooldownBase = 3;
+            }
+        }
+
+        //changes the radius of the range circle based on the range
+
+
+
 
         if(shotCooldown > 0.5)
         {

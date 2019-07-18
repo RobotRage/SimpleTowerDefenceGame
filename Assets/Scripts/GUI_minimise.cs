@@ -26,11 +26,11 @@ public class GUI_minimise : MonoBehaviour
 
     public void MinimiseGui()
     {
-        if(gameObject.activeSelf)
+        if (gameObject.activeSelf)
         {
             gameObject.SetActive(false);
             sprenderBtn.sprite = redBtn;
-          //  txt.text = "+";
+            //  txt.text = "+";
         }
         else
         {
@@ -38,5 +38,24 @@ public class GUI_minimise : MonoBehaviour
             sprenderBtn.sprite = yellowBtn;
             gameObject.SetActive(true);
         }
+
+        GameObject[] NotPlacedTowers;
+
+        NotPlacedTowers = GameObject.FindGameObjectsWithTag("Unplaced");
+
+        //if there is an unplaced tower
+        if (NotPlacedTowers.Length > 0)
+        {
+            //delete all unplaced towers
+            foreach (GameObject tower in NotPlacedTowers)
+            {
+                Destroy(tower);
+                sprenderBtn.sprite = yellowBtn;
+                gameObject.SetActive(true);
+            }
+        }
+
+
+
     }
 }

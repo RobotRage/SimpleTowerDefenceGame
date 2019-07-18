@@ -7,7 +7,7 @@ public class Spawner : MonoBehaviour
     //colby's code
     
     public GameObject enemy;
-    float delay = 3.5f;
+    public float delay = 3f;
 
     
 

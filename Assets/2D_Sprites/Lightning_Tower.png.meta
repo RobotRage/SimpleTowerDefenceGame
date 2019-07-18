@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 286773ea2de2d914c9a5a4b36f05cd04
+guid: 52f88777781dda045aa7743ce345f2f3
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 554815271129208803
-    second: Harpoon_Launcher_0
+      213: 5939307129690235288
+    second: Lightning_Tower_0
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -101,12 +101,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Harpoon_Launcher_0
+      name: Lightning_Tower_0
       rect:
         serializedVersion: 2
-        x: 21
-        y: 73
-        width: 11
+        x: 37
+        y: 91
+        width: 15
         height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a3a73e5bab9fd3b40abd10d567b1c68f
-      internalID: 554815271129208803
+      spriteID: aaf2a4a1ca3d4a149b5b4863d4d4bd01
+      internalID: 5939307129690235288
       vertices: []
       indices: 
       edges: []

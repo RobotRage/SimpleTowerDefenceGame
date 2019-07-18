@@ -7,6 +7,7 @@ using UnityEngine.EventSystems;
 
 public class TowerCreation : MonoBehaviour
 {
+    public GameObject minimiseGUI;
     //an array of gameobjects which holds all the towers
     //new towers can be added in unity inspector on the "TowerSpawn" object
     public GameObject[] Towers;
@@ -39,11 +40,28 @@ public class TowerCreation : MonoBehaviour
         MoneyGenTower.TowerCost = 100;
         MoneyGenTower.TowerObj = Towers[1];
         TowerClasses.Add(MoneyGenTower);
+
+        TowerStats CannonTower = new TowerStats();
+        CannonTower.TowerName = "btnCreateCannon";
+        CannonTower.TowerCost = 200;
+        CannonTower.TowerObj = Towers[2];
+        TowerClasses.Add(CannonTower);
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetMouseButtonDown(0))
+        {
+            GameObject[] NotPlacedTowers;
+            NotPlacedTowers = GameObject.FindGameObjectsWithTag("Unplaced");
+
+            if(NotPlacedTowers.Length > 0)
+            {
+                minimiseGUI.SetActive(true);
+            }
+        }
+
         if (Input.GetMouseButtonDown(1))
         {
             RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
@@ -59,6 +77,7 @@ public class TowerCreation : MonoBehaviour
     //function is called when any button is pressed (must be assigned when new button is created)
     public void CreateTower()
     {
+        minimiseGUI.SetActive(false);
         //array of towers that are not placed
         GameObject[] NotPlacedTowers;
 
