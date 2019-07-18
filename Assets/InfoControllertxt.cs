@@ -7,7 +7,7 @@ public class InfoControllertxt : MonoBehaviour
     Text txt;
     int levelAttack;
     int levelPasive;
-
+    public GameObject infoBox;
     public GameObject upgradeButton;
     // Start is called before the first frame update
     void Start()
@@ -33,6 +33,12 @@ public class InfoControllertxt : MonoBehaviour
                 GlobalVars.CurrentlySelected.GetComponent<MoneyGenTowerController>().level++;
                 txt.text = GlobalVars.CurrentlySelected.name + " has been upgraded to level " + (GlobalVars.CurrentlySelected.GetComponent<MoneyGenTowerController>().level);
             }
+            if (GlobalVars.CurrentlySelected.name == "Cannons(Clone)" | GlobalVars.CurrentlySelected.name == "Cannons" && GlobalVars.G_Money >= levelAttack * 700)
+            {
+                GlobalVars.G_Money -= levelAttack * 700;
+                GlobalVars.CurrentlySelected.GetComponentInChildren<TowerProperties>().level++;
+                txt.text = GlobalVars.CurrentlySelected.name + " has been upgraded to level " + (GlobalVars.CurrentlySelected.GetComponentInChildren<TowerProperties>().level);
+            }
         }
 
         upgradeButton.SetActive(false);
@@ -54,6 +60,11 @@ public class InfoControllertxt : MonoBehaviour
                     levelPasive = GlobalVars.CurrentlySelected.GetComponent<MoneyGenTowerController>().level;
                     txt.text = "Upgrade Gold generator to level "+(levelPasive+1)+" for "+ levelPasive * 600 +"$? click hammer button";
                 }
+                if (GlobalVars.CurrentlySelected.name == "Cannons(Clone)")
+                {
+                    levelAttack = GlobalVars.CurrentlySelected.GetComponentInChildren<TowerProperties>().level;
+                    txt.text = "Upgrade Cannons to level " + (levelAttack + 1) + " for " + levelAttack * 700 + "$? click hammer button";
+                }
             }
         }
         else
@@ -61,20 +72,29 @@ public class InfoControllertxt : MonoBehaviour
             txt.text = "Click tower for info";
         }
     }
+    
     public void OnMouseHoverButton(Button btn)
     {
+
+        GameObject rangeOff = Camera.main.GetComponent<RaycastingController>().lasttouched;
+        Camera.main.GetComponent<RaycastingController>().lasttouched = null;
+        if (rangeOff !=null)
+        {
+            rangeOff.gameObject.transform.GetChild(0).GetComponent<SpriteRenderer>().enabled = false;
+        }
+
         upgradeButton.SetActive(false);
         if (btn.name == "btnCreateTower_1")
         {
-             txt.text = "This is a basic turrent that shoots in 4 directions";          
+             txt.text = "turrent that shoots in 4 directions";          
         }
         if (btn.name == "btnCreateTower_MoneyGen")
         {
-           txt.text = "Tower that generates income every second";
+           txt.text = "generates income every second";
         }
         if (btn.name == "btnCreateCannon")
         {
-            txt.text = "Cannon only shoots forward, massive range and damage";
+            txt.text = "only shoots forward, high range and damage";
         }
     }
     // Update is called once per frame

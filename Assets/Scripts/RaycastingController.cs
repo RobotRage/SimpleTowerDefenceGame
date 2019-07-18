@@ -7,7 +7,7 @@ public class RaycastingController : MonoBehaviour
 
     // Colby's Code
     public GameObject InfoBox;
-    GameObject lasttouched;
+    public GameObject lasttouched;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,7 +27,6 @@ public class RaycastingController : MonoBehaviour
         {
                 GlobalVars.CurrentlySelected = hit.collider.gameObject;
                 InfoBox.GetComponent<InfoControllertxt>().OnClickTower();
-
         }
         if(Input.GetMouseButtonDown(0) && hit.collider == null)
         {
@@ -35,9 +34,13 @@ public class RaycastingController : MonoBehaviour
         }
         if(Input.GetMouseButtonDown(0))
         {
-            if(lasttouched!=null)
+            if (lasttouched !=null )
             {
-                lasttouched.gameObject.transform.GetChild(0).GetComponent<SpriteRenderer>().enabled = false;
+                if(lasttouched.gameObject.transform.GetChild(0).GetComponent<SpriteRenderer>() !=null)
+                {
+                    lasttouched.gameObject.transform.GetChild(0).GetComponent<SpriteRenderer>().enabled = false;
+                }
+
             }
             // Checks if ray hit something
             if (hit.collider != null)
@@ -45,6 +48,7 @@ public class RaycastingController : MonoBehaviour
                 // Logic concerning placed buildings
                 if (hit.collider.gameObject.tag == "Placed")
                 {
+                    
                     // Checks if this object is not what the mouse was on last frame
                     if (lasttouched != hit.collider.gameObject)
                     {
@@ -55,9 +59,7 @@ public class RaycastingController : MonoBehaviour
                         }
                     }
 
-                    // Save the obejct the mouse is currently on
                     lasttouched = hit.collider.gameObject;
-
                     // Right mouse button
                     if (Input.GetMouseButtonDown(1))
                     {
