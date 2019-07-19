@@ -5,6 +5,54 @@ TextureImporter:
   - first:
       213: 5185083853824013515
     second: Flame_Tower_0
+  - first:
+      213: -3208822387311667164
+    second: Flame_Tower_1
+  - first:
+      213: -3736332240291208141
+    second: Flame_Tower_2
+  - first:
+      213: 4285113082456086129
+    second: Flame_Tower_3
+  - first:
+      213: 2413135351955058812
+    second: Flame_Tower_4
+  - first:
+      213: -8764391125886337661
+    second: Flame_Tower_5
+  - first:
+      213: 6769625468971165121
+    second: Flame_Tower_6
+  - first:
+      213: -8135733544600573812
+    second: Flame_Tower_7
+  - first:
+      213: 2037267108755869496
+    second: Flame_Tower_8
+  - first:
+      213: 6993849820238583458
+    second: Flame_Tower_9
+  - first:
+      213: 2806607837200225536
+    second: Flame_Tower_10
+  - first:
+      213: 3418329763889173941
+    second: Flame_Tower_11
+  - first:
+      213: 7380634685029367056
+    second: Flame_Tower_12
+  - first:
+      213: 5887930458803475617
+    second: Flame_Tower_13
+  - first:
+      213: 1461870107632014992
+    second: Flame_Tower_14
+  - first:
+      213: 1209452114198360268
+    second: Flame_Tower_15
+  - first:
+      213: 163038030189247571
+    second: Flame_Tower_16
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -109,7 +157,7 @@ TextureImporter:
         width: 15
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -117,6 +165,342 @@ TextureImporter:
       bones: []
       spriteID: 022b511cf35edb144ab3efd0f2e92adf
       internalID: 5185083853824013515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flame_Tower_1
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 55
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98398203b6154ec49a2116b199f3e46a
+      internalID: -3208822387311667164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flame_Tower_2
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 55
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2fb5a968999489b409e3b0edda98265b
+      internalID: -3736332240291208141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flame_Tower_3
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 55
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd6aa2562db7b0243b2eb3c31101f4e5
+      internalID: 4285113082456086129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flame_Tower_4
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 37
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2fc082ab4223140408aa5be676a8e5fc
+      internalID: 2413135351955058812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flame_Tower_5
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 37
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c74cb2d37d32d54db4fe5ec78082ad8
+      internalID: -8764391125886337661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flame_Tower_6
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 37
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 086c057a7578efd4792d59b35fd2b085
+      internalID: 6769625468971165121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flame_Tower_7
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 37
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3bea4a2288bfc543adfac03c8294814
+      internalID: -8135733544600573812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flame_Tower_8
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 37
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48fb7f120ff6ff943828f6767ad703f3
+      internalID: 2037267108755869496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flame_Tower_9
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 21
+        width: 9
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c11ceccc3b7486444a67bcf8025b6b2c
+      internalID: 6993849820238583458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flame_Tower_10
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 21
+        width: 9
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ab9eea00018f824192d9e838f0ad053
+      internalID: 2806607837200225536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flame_Tower_11
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 21
+        width: 9
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 853da825b25617543967d3862560cb5a
+      internalID: 3418329763889173941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flame_Tower_12
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 21
+        width: 9
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4fb9538bb00b38846853cd5b86de6060
+      internalID: 7380634685029367056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flame_Tower_13
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 3
+        width: 15
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 231f857666dff394b9b7d7d97ca76ced
+      internalID: 5887930458803475617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flame_Tower_14
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 3
+        width: 15
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41f7d9131b6429546b234ff9d3278fb8
+      internalID: 1461870107632014992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flame_Tower_15
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 3
+        width: 15
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1928a508a17c5c4d81ad9bcf6ac934c
+      internalID: 1209452114198360268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flame_Tower_16
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 3
+        width: 15
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7cf174563f497544a92daee28f89560a
+      internalID: 163038030189247571
       vertices: []
       indices: 
       edges: []

@@ -46,6 +46,12 @@ public class TowerCreation : MonoBehaviour
         CannonTower.TowerCost = 200;
         CannonTower.TowerObj = Towers[2];
         TowerClasses.Add(CannonTower);
+
+        TowerStats Flamer = new TowerStats();
+        Flamer.TowerName = "btnCreateFlamer";
+        Flamer.TowerCost = 1000;
+        Flamer.TowerObj = Towers[3];
+        TowerClasses.Add(Flamer);
     }
 
     // Update is called once per frame

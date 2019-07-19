@@ -27,6 +27,27 @@ public class BulletController : MonoBehaviour
             transform.eulerAngles = new Vector3(0, 0, 90);
             Direction = new Vector3(0, -1, 0);
         }
+
+        else if (Direction == new Vector3(1, 1, 0))
+        {
+            transform.eulerAngles = new Vector3(0, 0, 45);
+            Direction = new Vector3(0, -1, 0);
+        }
+        else if (Direction == new Vector3(1, -1, 0))
+        {
+            transform.eulerAngles = new Vector3(0, 0, 135);
+            Direction = new Vector3(0, -1, 0);
+        }
+        else if (Direction == new Vector3(-1, 1, 0))
+        {
+            transform.eulerAngles = new Vector3(0, 0, 225);
+            Direction = new Vector3(0, -1, 0);
+        }
+        else if (Direction == new Vector3(-1, -1, 0))
+        {
+            transform.eulerAngles = new Vector3(0, 0, -45);
+            Direction = new Vector3(0, -1, 0);
+        }
     }
 
     // Update is called once per frame

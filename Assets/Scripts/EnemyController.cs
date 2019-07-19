@@ -17,7 +17,7 @@ public class EnemyController : MonoBehaviour
     public GameObject RedHP;
 
     public GameObject explosionObj;
-
+    public GameObject FlameExplosion;
     string WhichRow;
     void Start()
     {
@@ -77,7 +77,14 @@ public class EnemyController : MonoBehaviour
 
         if(collision.gameObject.tag == "Bullet")
         {
-            Instantiate(explosionObj, gameObject.transform.position, gameObject.transform.rotation);
+            if(collision.gameObject.name == "Bullet(Clone)")
+            {
+                Instantiate(explosionObj, gameObject.transform.position, gameObject.transform.rotation);
+            }
+            if(collision.gameObject.name == "FlameBullet(Clone)")
+            {
+                Instantiate(FlameExplosion, gameObject.transform.position, gameObject.transform.rotation);
+            }
 
 
             //reduces hp based on the bullet damage on the BulletController

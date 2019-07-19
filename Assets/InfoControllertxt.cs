@@ -39,6 +39,12 @@ public class InfoControllertxt : MonoBehaviour
                 GlobalVars.CurrentlySelected.GetComponentInChildren<TowerProperties>().level++;
                 txt.text = GlobalVars.CurrentlySelected.name + " has been upgraded to level " + (GlobalVars.CurrentlySelected.GetComponentInChildren<TowerProperties>().level);
             }
+            if (GlobalVars.CurrentlySelected.name == "Flame_Tower_1(Clone)" | GlobalVars.CurrentlySelected.name == "Flame_Tower_1" && GlobalVars.G_Money >= levelAttack * 1000)
+            {
+                GlobalVars.G_Money -= levelAttack * 1000;
+                GlobalVars.CurrentlySelected.GetComponentInChildren<TowerProperties>().level++;
+                txt.text = GlobalVars.CurrentlySelected.name + " has been upgraded to level " + (GlobalVars.CurrentlySelected.GetComponentInChildren<TowerProperties>().level);
+            }
         }
 
         upgradeButton.SetActive(false);
@@ -64,6 +70,11 @@ public class InfoControllertxt : MonoBehaviour
                 {
                     levelAttack = GlobalVars.CurrentlySelected.GetComponentInChildren<TowerProperties>().level;
                     txt.text = "Upgrade Cannons to level " + (levelAttack + 1) + " for " + levelAttack * 700 + "$? click hammer button";
+                }
+                if (GlobalVars.CurrentlySelected.name == "Flame_Tower_1(Clone)")
+                {
+                    levelAttack = GlobalVars.CurrentlySelected.GetComponentInChildren<TowerProperties>().level;
+                    txt.text = "Upgrade Flamer to level " + (levelAttack + 1) + " for " + levelAttack * 1000 + "$? click hammer button";
                 }
             }
         }
@@ -95,6 +106,10 @@ public class InfoControllertxt : MonoBehaviour
         if (btn.name == "btnCreateCannon")
         {
             txt.text = "only shoots forward, high range and damage";
+        }
+        if (btn.name == "btnCreateFlamer")
+        {
+            txt.text = "High damage 8 directional fire";
         }
     }
     // Update is called once per frame

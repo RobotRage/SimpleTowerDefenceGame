@@ -68,7 +68,43 @@ public class TowerProperties : MonoBehaviour
             InstantiatedBullet.GetComponent<BulletController>().bulletDamage = damage;
             InstantiatedBullet.GetComponent<BulletController>().Direction = new Vector3(0, 1, 0);
         }
- 
+        if (parent.name == "Flame_Tower_1(Clone)")
+        {
+            //for(int i=0; i<)
+
+            InstantiatedBullet = Instantiate(Bullet, gameObject.transform.position, Quaternion.identity);
+            InstantiatedBullet.GetComponent<BulletController>().bulletDamage = damage;
+            InstantiatedBullet.GetComponent<BulletController>().Direction = new Vector3(0, 1, 0);
+
+            InstantiatedBullet = Instantiate(Bullet, gameObject.transform.position, Quaternion.identity);
+            InstantiatedBullet.GetComponent<BulletController>().bulletDamage = damage;
+            InstantiatedBullet.GetComponent<BulletController>().Direction = new Vector3(0, -1, 0);
+
+            InstantiatedBullet = Instantiate(Bullet, gameObject.transform.position, Quaternion.identity);
+            InstantiatedBullet.GetComponent<BulletController>().bulletDamage = damage;
+            InstantiatedBullet.GetComponent<BulletController>().Direction = new Vector3(1, 0, 0);
+
+            InstantiatedBullet = Instantiate(Bullet, gameObject.transform.position, Quaternion.identity);
+            InstantiatedBullet.GetComponent<BulletController>().bulletDamage = damage;
+            InstantiatedBullet.GetComponent<BulletController>().Direction = new Vector3(-1, 0, 0);
+
+
+            InstantiatedBullet = Instantiate(Bullet, gameObject.transform.position, Quaternion.identity);
+            InstantiatedBullet.GetComponent<BulletController>().bulletDamage = damage;
+            InstantiatedBullet.GetComponent<BulletController>().Direction = new Vector3(1, 1, 0);
+
+            InstantiatedBullet = Instantiate(Bullet, gameObject.transform.position, Quaternion.identity);
+            InstantiatedBullet.GetComponent<BulletController>().bulletDamage = damage;
+            InstantiatedBullet.GetComponent<BulletController>().Direction = new Vector3(1, -1, 0);
+
+            InstantiatedBullet = Instantiate(Bullet, gameObject.transform.position, Quaternion.identity);
+            InstantiatedBullet.GetComponent<BulletController>().bulletDamage = damage;
+            InstantiatedBullet.GetComponent<BulletController>().Direction = new Vector3(-1, 1, 0);
+
+            InstantiatedBullet = Instantiate(Bullet, gameObject.transform.position, Quaternion.identity);
+            InstantiatedBullet.GetComponent<BulletController>().bulletDamage = damage;
+            InstantiatedBullet.GetComponent<BulletController>().Direction = new Vector3(-1, -1, 0);
+        }
 
     }
 
@@ -87,6 +123,11 @@ public class TowerProperties : MonoBehaviour
             {
                 damageMultiplier = (level + 3f) / 2;
                 shotCooldownBase = 3;
+            }
+            if(parent.name == "Flame_Tower_1(Clone)")
+            {
+                damageMultiplier = (level + 4) / 2;
+                shotCooldownBase = 1;
             }
         }
 

@@ -179,6 +179,8 @@ MonoBehaviour:
   RedHP: {fileID: 88902408775654532}
   explosionObj: {fileID: 2836461589378221803, guid: 3664234fea30a2743975700ce47f8a67,
     type: 3}
+  FlameExplosion: {fileID: 2836461589378221803, guid: 318660b814c43654bb5217e883db1dcd,
+    type: 3}
 --- !u!50 &-2515248819274686474
 Rigidbody2D:
   serializedVersion: 4
