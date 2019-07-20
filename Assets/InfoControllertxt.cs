@@ -45,6 +45,12 @@ public class InfoControllertxt : MonoBehaviour
                 GlobalVars.CurrentlySelected.GetComponentInChildren<TowerProperties>().level++;
                 txt.text = GlobalVars.CurrentlySelected.name + " has been upgraded to level " + (GlobalVars.CurrentlySelected.GetComponentInChildren<TowerProperties>().level);
             }
+            if (GlobalVars.CurrentlySelected.name == "Lightning_Tower(Clone)" | GlobalVars.CurrentlySelected.name == "Lightning_Tower" && GlobalVars.G_Money >= levelAttack * 2000)
+            {
+                GlobalVars.G_Money -= levelAttack * 2000;
+                GlobalVars.CurrentlySelected.GetComponentInChildren<TowerProperties>().level++;
+                txt.text = GlobalVars.CurrentlySelected.name + " has been upgraded to level " + (GlobalVars.CurrentlySelected.GetComponentInChildren<TowerProperties>().level);
+            }
         }
 
         upgradeButton.SetActive(false);
@@ -75,6 +81,11 @@ public class InfoControllertxt : MonoBehaviour
                 {
                     levelAttack = GlobalVars.CurrentlySelected.GetComponentInChildren<TowerProperties>().level;
                     txt.text = "Upgrade Flamer to level " + (levelAttack + 1) + " for " + levelAttack * 1000 + "$? click hammer button";
+                }
+                if (GlobalVars.CurrentlySelected.name == "Lightning_Tower(Clone)")
+                {
+                    levelAttack = GlobalVars.CurrentlySelected.GetComponentInChildren<TowerProperties>().level;
+                    txt.text = "Upgrade Witch to level " + (levelAttack + 1) + " for " + levelAttack * 2000 + "$? click hammer button";
                 }
             }
         }
@@ -110,6 +121,10 @@ public class InfoControllertxt : MonoBehaviour
         if (btn.name == "btnCreateFlamer")
         {
             txt.text = "High damage 8 directional fire";
+        }
+        if (btn.name == "btnCreateLightning")
+        {
+            txt.text = "Zapps all enemies in range";
         }
     }
     // Update is called once per frame

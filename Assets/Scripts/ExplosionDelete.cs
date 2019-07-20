@@ -10,12 +10,20 @@ public class ExplosionDelete : MonoBehaviour
     // anyway back to work 
     void Start()
     {
-        StartCoroutine(Wait());
+        if(gameObject.name == "Lightning_Cloud(Clone)")
+        {
+            StartCoroutine(Wait(0.3f));
+        }
+        else
+        {
+            StartCoroutine(Wait(0.2f));
+        }
+
     }
 
-    IEnumerator Wait()
+    IEnumerator Wait(float x)
     {
-        yield return new WaitForSeconds(0.20f);
+        yield return new WaitForSeconds(x);
         Destroy(gameObject);
     }
 

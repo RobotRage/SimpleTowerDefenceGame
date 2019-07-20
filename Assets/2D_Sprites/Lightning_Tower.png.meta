@@ -5,6 +5,78 @@ TextureImporter:
   - first:
       213: 5939307129690235288
     second: Lightning_Tower_0
+  - first:
+      213: -3087791704458012729
+    second: Lightning_Tower_1
+  - first:
+      213: 5187014357442207709
+    second: Lightning_Tower_2
+  - first:
+      213: -1617647582518176099
+    second: Lightning_Tower_3
+  - first:
+      213: 2109188403656927337
+    second: Lightning_Tower_4
+  - first:
+      213: -9050910590116117593
+    second: Lightning_Tower_5
+  - first:
+      213: -472709937064700839
+    second: Lightning_Tower_6
+  - first:
+      213: 5353286285081638038
+    second: Lightning_Tower_7
+  - first:
+      213: -597966314721782654
+    second: Lightning_Tower_8
+  - first:
+      213: -3062590260032197904
+    second: Lightning_Tower_9
+  - first:
+      213: -2674370926078689008
+    second: Lightning_Tower_10
+  - first:
+      213: -8802860604441228878
+    second: Lightning_Tower_11
+  - first:
+      213: -5618550983953810500
+    second: Lightning_Tower_12
+  - first:
+      213: 3550961083561786346
+    second: Lightning_Tower_13
+  - first:
+      213: -7550023606237466758
+    second: Lightning_Tower_14
+  - first:
+      213: -7983984059810940605
+    second: Lightning_Tower_15
+  - first:
+      213: -4096862989896706652
+    second: Lightning_Tower_16
+  - first:
+      213: -676571532828745445
+    second: Lightning_Tower_17
+  - first:
+      213: 3551143142276401074
+    second: Lightning_Tower_18
+  - first:
+      213: 5474415872738291551
+    second: Lightning_Tower_19
+  - first:
+      213: 1407413955205188048
+    second: Lightning_Tower_20
+  - first:
+      213: 3262736808976381437
+    second: Lightning_Tower_21
+  - first:
+      213: -1568070903407417372
+    second: Lightning_Tower_22
+  - first:
+      213: -771030037852572642
+    second: Lightning_Tower_23
+  - first:
+      213: 1317766527577384611
+    second: Lightning_Tower_24
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -109,7 +181,7 @@ TextureImporter:
         width: 15
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -117,6 +189,510 @@ TextureImporter:
       bones: []
       spriteID: aaf2a4a1ca3d4a149b5b4863d4d4bd01
       internalID: 5939307129690235288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lightning_Tower_1
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 91
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88cb2da5123a1a740a5841f8b17df862
+      internalID: -3087791704458012729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lightning_Tower_2
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 109
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d264ab9672eeaba43a32fcbacd4645ca
+      internalID: 5187014357442207709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lightning_Tower_3
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 91
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3107cde3394bd0a41baf3afda4a6d396
+      internalID: -1617647582518176099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lightning_Tower_4
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 91
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9166e5e25a9ee9443a6cd4133b32c953
+      internalID: 2109188403656927337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lightning_Tower_5
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 73
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08c1f8a69a902af48a436e1fea6aa89e
+      internalID: -9050910590116117593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lightning_Tower_6
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 73
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e25cc271072b68044b0f708919d60a00
+      internalID: -472709937064700839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lightning_Tower_7
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 73
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e33bfd8db51d5d94eb9e2e7fe9c9fa6b
+      internalID: 5353286285081638038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lightning_Tower_8
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 73
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3b36fcbc1322a640955028dccbdfcad
+      internalID: -597966314721782654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lightning_Tower_9
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 73
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57b7e05a229d9a743b66907217952bf3
+      internalID: -3062590260032197904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lightning_Tower_10
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 55
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3654b962117f0c447829a5ba0e57a27a
+      internalID: -2674370926078689008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lightning_Tower_11
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 55
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 417fe4501556e7b4b982a83b820a9dad
+      internalID: -8802860604441228878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lightning_Tower_12
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 55
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 749346babfc8e2946a56d0e4a47b5150
+      internalID: -5618550983953810500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lightning_Tower_13
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 55
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1ee4db2f895b5142ab29329aaa7d91a
+      internalID: 3550961083561786346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lightning_Tower_14
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 55
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a7f15f5b75165645a3545e8b052d881
+      internalID: -7550023606237466758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lightning_Tower_15
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 5
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a08cfcf591b411745899cf736eebcda3
+      internalID: -7983984059810940605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lightning_Tower_16
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 5
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a57664993433346468108078cd1af1fa
+      internalID: -4096862989896706652
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lightning_Tower_17
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 5
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7dc51a5f722d8b4e861f96ced475150
+      internalID: -676571532828745445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lightning_Tower_18
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 5
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cea185b05fe817846923a3c2a50dd076
+      internalID: 3551143142276401074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lightning_Tower_19
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 38
+        width: 12
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 328ce15e680524148921ddd1cd0ab929
+      internalID: 5474415872738291551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lightning_Tower_20
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 38
+        width: 12
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 734150af2748abf4a8425f52a258cd12
+      internalID: 1407413955205188048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lightning_Tower_21
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 38
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ce0355a97c211d44adf5d078c34377f
+      internalID: 3262736808976381437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lightning_Tower_22
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 39
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba84bbee86ba63a4d8c5e048ef7bb43f
+      internalID: -1568070903407417372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lightning_Tower_23
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 26
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 276329d8518fafd43b5ce839cfd09f44
+      internalID: -771030037852572642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lightning_Tower_24
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 26
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd100176fef2eb04ea41b491c2eb5994
+      internalID: 1317766527577384611
       vertices: []
       indices: 
       edges: []

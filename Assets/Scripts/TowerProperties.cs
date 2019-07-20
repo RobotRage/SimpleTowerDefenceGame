@@ -39,6 +39,8 @@ public class TowerProperties : MonoBehaviour
     GameObject parent;
     private Animator parentAnim;
 
+    public GameObject lightningCloud;
+    public GameObject Lightningreal;
     void Shoot()
     {
         GameObject InstantiatedBullet;
@@ -105,7 +107,15 @@ public class TowerProperties : MonoBehaviour
             InstantiatedBullet.GetComponent<BulletController>().bulletDamage = damage;
             InstantiatedBullet.GetComponent<BulletController>().Direction = new Vector3(-1, -1, 0);
         }
-
+        if (parent.name == "Lightning_Tower(Clone)")
+        {
+            foreach (GameObject enemy in EnemiesInRange)
+            {
+                Instantiate(lightningCloud, new Vector3(enemy.transform.position.x, enemy.transform.position.y + 1, enemy.transform.position.z), Quaternion.identity);
+                InstantiatedBullet = Instantiate(Lightningreal, new Vector3(enemy.transform.position.x, enemy.transform.position.y, enemy.transform.position.z), Quaternion.identity);
+                InstantiatedBullet.GetComponent<BulletController>().bulletDamage = 2* damageMultiplier;
+            }
+        }
     }
 
     //call this whenever there is a ingame buff or nerf that needs to change the properties of the tower
@@ -127,6 +137,11 @@ public class TowerProperties : MonoBehaviour
             if(parent.name == "Flame_Tower_1(Clone)")
             {
                 damageMultiplier = (level + 4) / 2;
+                shotCooldownBase = 1;
+            }
+            if (parent.name == "Lightning_Tower(Clone)")
+            {
+                damageMultiplier = (level + 10) / 2;
                 shotCooldownBase = 1;
             }
         }
@@ -199,7 +214,8 @@ public class TowerProperties : MonoBehaviour
                 if (!coolDownToggle)
                 {
                     coolDownToggle = true;
-                    StartCoroutine(Wait(shotCooldown * GlobalVars.DebuffShotSpeed));
+                        StartCoroutine(Wait(shotCooldown * GlobalVars.DebuffShotSpeed));
+                    
                 }
             }
         }

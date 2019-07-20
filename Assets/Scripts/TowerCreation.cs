@@ -15,7 +15,7 @@ public class TowerCreation : MonoBehaviour
     public class TowerStats
     {
         public string TowerName;
-        public GameObject TowerObj;
+       public  GameObject TowerObj;
         public int TowerCost;
     }
 
@@ -52,6 +52,13 @@ public class TowerCreation : MonoBehaviour
         Flamer.TowerCost = 1000;
         Flamer.TowerObj = Towers[3];
         TowerClasses.Add(Flamer);
+        
+        TowerStats LightningTower = new TowerStats();
+        LightningTower.TowerName = "btnCreateLightning";
+        LightningTower.TowerCost = 1500;
+        LightningTower.TowerObj = Towers[4];
+        TowerClasses.Add(LightningTower);
+        
     }
 
     // Update is called once per frame

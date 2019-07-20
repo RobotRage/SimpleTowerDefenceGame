@@ -12,42 +12,49 @@ public class BulletController : MonoBehaviour
     void Start()
     {
         sprender = gameObject.GetComponent<SpriteRenderer>();
+        if(gameObject.name != "lightningreal(Clone)")
+        {
+            if (Direction == new Vector3(0, 1, 0))
+            {
+                sprender.flipY = true;
+            }
+            else if (Direction == new Vector3(1, 0, 0))
+            {
+                transform.eulerAngles = new Vector3(0, 0, -90);
+                Direction = new Vector3(0, -1, 0);
+            }
+            else if (Direction == new Vector3(-1, 0, 0))
+            {
+                transform.eulerAngles = new Vector3(0, 0, 90);
+                Direction = new Vector3(0, -1, 0);
+            }
 
-        if (Direction == new Vector3(0, 1, 0))
-        {
-            sprender.flipY = true;
+            else if (Direction == new Vector3(1, 1, 0))
+            {
+                transform.eulerAngles = new Vector3(0, 0, 45);
+                Direction = new Vector3(0, -1, 0);
+            }
+            else if (Direction == new Vector3(1, -1, 0))
+            {
+                transform.eulerAngles = new Vector3(0, 0, 135);
+                Direction = new Vector3(0, -1, 0);
+            }
+            else if (Direction == new Vector3(-1, 1, 0))
+            {
+                transform.eulerAngles = new Vector3(0, 0, 225);
+                Direction = new Vector3(0, -1, 0);
+            }
+            else if (Direction == new Vector3(-1, -1, 0))
+            {
+                transform.eulerAngles = new Vector3(0, 0, -45);
+                Direction = new Vector3(0, -1, 0);
+            }
         }
-        else if (Direction == new Vector3(1, 0, 0))
+        else
         {
-            transform.eulerAngles = new Vector3(0, 0, -90);
-            Direction = new Vector3(0, -1, 0);
-        }
-        else if (Direction == new Vector3(-1, 0, 0))
-        {
-            transform.eulerAngles = new Vector3(0, 0, 90);
-            Direction = new Vector3(0, -1, 0);
-        }
 
-        else if (Direction == new Vector3(1, 1, 0))
-        {
-            transform.eulerAngles = new Vector3(0, 0, 45);
-            Direction = new Vector3(0, -1, 0);
         }
-        else if (Direction == new Vector3(1, -1, 0))
-        {
-            transform.eulerAngles = new Vector3(0, 0, 135);
-            Direction = new Vector3(0, -1, 0);
-        }
-        else if (Direction == new Vector3(-1, 1, 0))
-        {
-            transform.eulerAngles = new Vector3(0, 0, 225);
-            Direction = new Vector3(0, -1, 0);
-        }
-        else if (Direction == new Vector3(-1, -1, 0))
-        {
-            transform.eulerAngles = new Vector3(0, 0, -45);
-            Direction = new Vector3(0, -1, 0);
-        }
+       
     }
 
     // Update is called once per frame

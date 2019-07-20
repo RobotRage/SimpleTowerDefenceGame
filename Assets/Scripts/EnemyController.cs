@@ -11,7 +11,7 @@ public class EnemyController : MonoBehaviour
     public int speed = 1;
     bool done = false;
 
-    float baseHp = 50;
+    public float baseHp = 50;
 
     public GameObject GreenHP;
     public GameObject RedHP;
@@ -77,7 +77,7 @@ public class EnemyController : MonoBehaviour
 
         if(collision.gameObject.tag == "Bullet")
         {
-            if(collision.gameObject.name == "Bullet(Clone)")
+            if(collision.gameObject.name == "Bullet(Clone)" | collision.gameObject.name ==  "Cannons_9(Clone)")
             {
                 Instantiate(explosionObj, gameObject.transform.position, gameObject.transform.rotation);
             }

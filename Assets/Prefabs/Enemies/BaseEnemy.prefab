@@ -175,6 +175,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
+  baseHp: 250
   GreenHP: {fileID: 6437888112168656650}
   RedHP: {fileID: 88902408775654532}
   explosionObj: {fileID: 2836461589378221803, guid: 3664234fea30a2743975700ce47f8a67,
