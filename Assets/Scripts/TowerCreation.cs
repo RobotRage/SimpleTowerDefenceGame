@@ -7,6 +7,8 @@ using UnityEngine.EventSystems;
 
 public class TowerCreation : MonoBehaviour
 {
+    public GameObject infoBox;
+    
     public GameObject minimiseGUI;
     //an array of gameobjects which holds all the towers
     //new towers can be added in unity inspector on the "TowerSpawn" object
@@ -58,7 +60,12 @@ public class TowerCreation : MonoBehaviour
         LightningTower.TowerCost = 1500;
         LightningTower.TowerObj = Towers[4];
         TowerClasses.Add(LightningTower);
-        
+
+        TowerStats RaftTower = new TowerStats();
+        RaftTower.TowerName = "RaftTower";
+        RaftTower.TowerCost = 300;
+        RaftTower.TowerObj = Towers[5];
+        TowerClasses.Add(RaftTower);
     }
 
     // Update is called once per frame
@@ -90,7 +97,9 @@ public class TowerCreation : MonoBehaviour
     //function is called when any button is pressed (must be assigned when new button is created)
     public void CreateTower()
     {
-        minimiseGUI.SetActive(false);
+
+        InfoControllertxt info = infoBox.GetComponent<InfoControllertxt>();
+
         //array of towers that are not placed
         GameObject[] NotPlacedTowers;
 
@@ -121,9 +130,14 @@ public class TowerCreation : MonoBehaviour
                     //check if the cost of the tower is inferior to the current money
                     if(GlobalVars.G_Money >= TempObj.TowerCost)
                     {
+                        minimiseGUI.SetActive(false);
                         //instatiate tower and pass cost to the tower place script
                         GameObject tower = Instantiate(TempObj.TowerObj, new Vector3(0, 0, 0), Quaternion.identity);
                         tower.GetComponent<TowerPlaceController>().towerCost = TempObj.TowerCost;
+                    }
+                    else
+                    {
+                        info.txt.text = "NOT ENOUGH GOLD!";
                     }
                 }
             }

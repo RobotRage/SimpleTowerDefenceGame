@@ -19,37 +19,106 @@ public class TowerPlaceController : MonoBehaviour
     bool canBePlaced = true;
 
     int NonvalidHitboxCount = 0;
+    int NonvalidHitboxCountTower = 0;
 
     private Vector3 mousePos;
 
     SpriteRenderer m_SpriteRenderer;
     Color col = Color.red;
+
+    bool onRaft = false;
+    int notOnEdgeRaft = 0;
     // Start is called before the first frame update
     void Start()
     {
         m_SpriteRenderer = GetComponent<SpriteRenderer>();
     }
+    public void ChildHitTrigger()
+    {
+        notOnEdgeRaft++;
+        print(notOnEdgeRaft);
+    }
+    public void ChildExitTrigger()
+    {
+        notOnEdgeRaft--;
+        print(notOnEdgeRaft);
+    }
+
+    //bad code incoming dont judge me
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "NonValidPlaceLocation")
+        if(collision.tag == "OnRaft")
         {
-            NonvalidHitboxCount++;
+            notOnEdgeRaft++;
         }
-        if (collision.gameObject.tag == "Placed")
-        {           
-            NonvalidHitboxCount++;
+        if(gameObject.name != "RaftTower(Clone)")
+        {
+            if(collision.gameObject.name == "RaftTower(Clone)")
+            {
+
+                onRaft = true;
+              //  print(onRaft);
+            }
+            if (collision.gameObject.tag == "NonValidPlaceLocation" )
+            {
+                NonvalidHitboxCount++;
+            }
+            if (collision.gameObject.tag == "Placed" &&collision.gameObject.name != "RaftTower(Clone)")
+            {
+                NonvalidHitboxCount++;
+                NonvalidHitboxCountTower++;
+            }
         }
+        else
+        {          
+            if (collision.gameObject.tag == "ValidPlaceLocation" | collision.gameObject.tag == "enemyPath")
+            {
+                NonvalidHitboxCount++;
+            }
+            if (collision.gameObject.tag == "Placed")
+            {
+                NonvalidHitboxCount++;
+                NonvalidHitboxCountTower++;
+            }
+        }
+       
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "NonValidPlaceLocation")
+        if (collision.tag == "OnRaft")
         {
-            NonvalidHitboxCount--;
+            notOnEdgeRaft--;
         }
-        if (collision.gameObject.tag == "Placed")
-        {        
-            NonvalidHitboxCount--;
+        if (gameObject.name != "RaftTower(Clone)")
+        {
+            if (collision.gameObject.name == "RaftTower(Clone)")
+            {
+                onRaft = false;
+               // print(onRaft);
+            }
+            if (collision.gameObject.tag == "NonValidPlaceLocation")
+            {
+                NonvalidHitboxCount--;
+            }
+            if (collision.gameObject.tag == "Placed" && collision.gameObject.name != "RaftTower(Clone)")
+            {
+                NonvalidHitboxCount--;
+                NonvalidHitboxCountTower--;
+            }
         }
+        else
+        {   
+            if (collision.gameObject.tag == "ValidPlaceLocation" | collision.gameObject.tag == "enemyPath")
+            {
+                NonvalidHitboxCount--;
+            }
+            if (collision.gameObject.tag == "Placed")
+            {
+                NonvalidHitboxCount--;
+                NonvalidHitboxCountTower--;
+            }
+        }
+
     }
     IEnumerator EndFrame()
     {
@@ -64,8 +133,10 @@ public class TowerPlaceController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         if (!placed)
         {
+            //print(notOnEdgeRaft);
             if (NonvalidHitboxCount == 0)
             {
                 canBePlaced = true;
@@ -76,6 +147,19 @@ public class TowerPlaceController : MonoBehaviour
                 canBePlaced = false;
                 m_SpriteRenderer.color = col;
             }
+
+            if (gameObject.name != "RaftTower(Clone)")
+            {
+                if (notOnEdgeRaft <= 0 && onRaft && NonvalidHitboxCountTower <=0)
+                {
+                    print("should be zero: "+ notOnEdgeRaft);
+                    m_SpriteRenderer.color = Color.white;
+                    canBePlaced = true;
+                }
+            }
+
+
+
         }
 
         if (!flagset)
@@ -83,10 +167,14 @@ public class TowerPlaceController : MonoBehaviour
             //changed the tower's tag based on if its placed or unplaced
             if (placed)
             {
-                if (gameObject.transform.GetChild(0).GetComponent<SpriteRenderer>() != null)
+                if(gameObject.transform.childCount > 0)
                 {
-                    //turn off the circle sprite when tower is placed
-                    gameObject.transform.GetChild(0).GetComponent<SpriteRenderer>().enabled = false;
+                    if (gameObject.transform.GetChild(0).GetComponent<SpriteRenderer>() != null)
+                    {
+                        //turn off the circle sprite when tower is placed
+                        gameObject.transform.GetChild(0).GetComponent<SpriteRenderer>().enabled = false;
+                    }
+
                 }
 
                 gameObject.tag = "Placed";

@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 public class InfoControllertxt : MonoBehaviour
 {
-    Text txt;
+    public Text txt;
     int levelAttack;
     int levelPasive;
     public GameObject infoBox;
@@ -23,36 +23,80 @@ public class InfoControllertxt : MonoBehaviour
 
         if(GlobalVars.CurrentlySelected != null)
         {
-            if (GlobalVars.CurrentlySelected.name == "TowerBase(Clone)" | GlobalVars.CurrentlySelected.name == "TowerBase" && GlobalVars.G_Money >= levelAttack * 500)
+            if (GlobalVars.CurrentlySelected.name == "TowerBase(Clone)" | GlobalVars.CurrentlySelected.name == "TowerBase" )
             {            
-                GlobalVars.G_Money -= levelAttack * 500;
-                GlobalVars.CurrentlySelected.GetComponentInChildren<TowerProperties>().level++;
-                txt.text = GlobalVars.CurrentlySelected.name + " has been upgraded to level " + (GlobalVars.CurrentlySelected.GetComponentInChildren<TowerProperties>().level);
+                if(GlobalVars.G_Money >= levelAttack * 500)
+                {
+                    GlobalVars.G_Money -= levelAttack * 500;
+                    GlobalVars.CurrentlySelected.GetComponentInChildren<TowerProperties>().level++;
+                    txt.text = GlobalVars.CurrentlySelected.name + " has been upgraded to level " + (GlobalVars.CurrentlySelected.GetComponentInChildren<TowerProperties>().level);
+                }
+                else
+                {
+                    txt.text = "NOT ENOUGH GOLD!";
+                }
             }
 
-            if (GlobalVars.CurrentlySelected.name == "MoneyGen(Clone)" | GlobalVars.CurrentlySelected.name == "MoneyGen" && GlobalVars.G_Money >= levelPasive * 600)
+            if (GlobalVars.CurrentlySelected.name == "MoneyGen(Clone)" | GlobalVars.CurrentlySelected.name == "MoneyGen" )
             {
-                GlobalVars.G_Money -= levelPasive * 600;
-                GlobalVars.CurrentlySelected.GetComponent<MoneyGenTowerController>().level++;
-                txt.text = GlobalVars.CurrentlySelected.name + " has been upgraded to level " + (GlobalVars.CurrentlySelected.GetComponent<MoneyGenTowerController>().level);
+                if(GlobalVars.G_Money >= levelPasive * 600)
+                {
+                    GlobalVars.G_Money -= levelPasive * 600;
+                    GlobalVars.CurrentlySelected.GetComponent<MoneyGenTowerController>().level++;
+                    txt.text = GlobalVars.CurrentlySelected.name + " has been upgraded to level " + (GlobalVars.CurrentlySelected.GetComponent<MoneyGenTowerController>().level);
+                }
+                else
+                {
+                    txt.text = "NOT ENOUGH GOLD!";
+                }
+
             }
-            if (GlobalVars.CurrentlySelected.name == "Cannons(Clone)" | GlobalVars.CurrentlySelected.name == "Cannons" && GlobalVars.G_Money >= levelAttack * 700)
+            if (GlobalVars.CurrentlySelected.name == "Cannons(Clone)" | GlobalVars.CurrentlySelected.name == "Cannons")
             {
-                GlobalVars.G_Money -= levelAttack * 700;
-                GlobalVars.CurrentlySelected.GetComponentInChildren<TowerProperties>().level++;
-                txt.text = GlobalVars.CurrentlySelected.name + " has been upgraded to level " + (GlobalVars.CurrentlySelected.GetComponentInChildren<TowerProperties>().level);
+                if(GlobalVars.G_Money >= levelAttack * 700)
+                {
+                    GlobalVars.G_Money -= levelAttack * 700;
+                    GlobalVars.CurrentlySelected.GetComponentInChildren<TowerProperties>().level++;
+                    txt.text = GlobalVars.CurrentlySelected.name + " has been upgraded to level " + (GlobalVars.CurrentlySelected.GetComponentInChildren<TowerProperties>().level);
+                }
+                else
+                {
+                    txt.text = "NOT ENOUGH GOLD!";
+                }
             }
-            if (GlobalVars.CurrentlySelected.name == "Flame_Tower_1(Clone)" | GlobalVars.CurrentlySelected.name == "Flame_Tower_1" && GlobalVars.G_Money >= levelAttack * 1000)
+
+            if (GlobalVars.CurrentlySelected.name == "Flame_Tower_1(Clone)" | GlobalVars.CurrentlySelected.name == "Flame_Tower_1" )
             {
-                GlobalVars.G_Money -= levelAttack * 1000;
-                GlobalVars.CurrentlySelected.GetComponentInChildren<TowerProperties>().level++;
-                txt.text = GlobalVars.CurrentlySelected.name + " has been upgraded to level " + (GlobalVars.CurrentlySelected.GetComponentInChildren<TowerProperties>().level);
+                if(GlobalVars.G_Money >= levelAttack * 1000)
+                {
+                    GlobalVars.G_Money -= levelAttack * 1000;
+                    GlobalVars.CurrentlySelected.GetComponentInChildren<TowerProperties>().level++;
+                    txt.text = GlobalVars.CurrentlySelected.name + " has been upgraded to level " + (GlobalVars.CurrentlySelected.GetComponentInChildren<TowerProperties>().level);
+                }
+                else
+                {
+                    txt.text = "NOT ENOUGH GOLD!";
+                }
             }
-            if (GlobalVars.CurrentlySelected.name == "Lightning_Tower(Clone)" | GlobalVars.CurrentlySelected.name == "Lightning_Tower" && GlobalVars.G_Money >= levelAttack * 2000)
+            if (GlobalVars.CurrentlySelected.name == "Lightning_Tower(Clone)" | GlobalVars.CurrentlySelected.name == "Lightning_Tower" )
             {
-                GlobalVars.G_Money -= levelAttack * 2000;
-                GlobalVars.CurrentlySelected.GetComponentInChildren<TowerProperties>().level++;
-                txt.text = GlobalVars.CurrentlySelected.name + " has been upgraded to level " + (GlobalVars.CurrentlySelected.GetComponentInChildren<TowerProperties>().level);
+                if(GlobalVars.G_Money >= levelAttack * 2000)
+                {
+                    GlobalVars.G_Money -= levelAttack * 2000;
+                    GlobalVars.CurrentlySelected.GetComponentInChildren<TowerProperties>().level++;
+                    txt.text = GlobalVars.CurrentlySelected.name + " has been upgraded to level " + (GlobalVars.CurrentlySelected.GetComponentInChildren<TowerProperties>().level);
+                }
+                else
+                {
+                    txt.text = "NOT ENOUGH GOLD!";
+                }
+            }
+            if(GlobalVars.CurrentlySelected.name == "RaftTower(Clone)")
+            {
+                GlobalVars.CurrentlySelected = null;
+                upgradeButton.SetActive(false);
+                SellBtn.SetActive(false);
+                txt.text = "";
             }
         }
         //GlobalVars.CurrentlySelected = btn.gameObject;
@@ -131,6 +175,10 @@ public class InfoControllertxt : MonoBehaviour
         if (btn.name == "btnCreateLightning")
         {
             txt.text = "Zapps all enemies in range";
+        }
+        if (btn.name == "RaftTower")
+        {
+            txt.text = "Allows placement of towers on Raft in water";
         }
     }
     

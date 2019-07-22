@@ -15,6 +15,8 @@ TagManager:
   - Boundry
   - EnemyLeft
   - EnemyRight
+  - enemyPath
+  - OnRaft
   layers:
   - Default
   - TransparentFX
