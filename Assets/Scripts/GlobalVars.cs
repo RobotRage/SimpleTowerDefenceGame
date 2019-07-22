@@ -31,6 +31,7 @@ public class GlobalVars : MonoBehaviour
 
     public static GameObject CurrentlySelected;
 
+    public static bool toggleClick = false;
     // Start is called before the first frame update
     void Start()
     {

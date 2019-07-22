@@ -16219,7 +16219,7 @@ PrefabInstance:
     - target: {fileID: 8901265270762840914, guid: ecb5f0019d6021d4dae42623f99b4c8b,
         type: 3}
       propertyPath: m_Name
-      value: Lightning_Tower (1)
+      value: Lightning_Tower
       objectReference: {fileID: 0}
     - target: {fileID: 8901265270762840914, guid: ecb5f0019d6021d4dae42623f99b4c8b,
         type: 3}

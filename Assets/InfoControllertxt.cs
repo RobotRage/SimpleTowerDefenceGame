@@ -9,15 +9,18 @@ public class InfoControllertxt : MonoBehaviour
     int levelPasive;
     public GameObject infoBox;
     public GameObject upgradeButton;
+    public GameObject SellBtn;
     // Start is called before the first frame update
     void Start()
     {
         txt = gameObject.GetComponent<Text>();
         upgradeButton.SetActive(false);
+        SellBtn.SetActive(false);
     }
-    public void OnClickUpgrade()
+    public void OnClickUpgrade(Button btn)
     {
-        
+        //GlobalVars.CurrentlySelected = btn.gameObject;
+
         if(GlobalVars.CurrentlySelected != null)
         {
             if (GlobalVars.CurrentlySelected.name == "TowerBase(Clone)" | GlobalVars.CurrentlySelected.name == "TowerBase" && GlobalVars.G_Money >= levelAttack * 500)
@@ -52,8 +55,9 @@ public class InfoControllertxt : MonoBehaviour
                 txt.text = GlobalVars.CurrentlySelected.name + " has been upgraded to level " + (GlobalVars.CurrentlySelected.GetComponentInChildren<TowerProperties>().level);
             }
         }
-
+        //GlobalVars.CurrentlySelected = btn.gameObject;
         upgradeButton.SetActive(false);
+        SellBtn.SetActive(false);
     }
     public void OnClickTower()
     {
@@ -62,6 +66,7 @@ public class InfoControllertxt : MonoBehaviour
             if (GlobalVars.CurrentlySelected.tag == "Placed")
             {
                 upgradeButton.SetActive(true);
+                SellBtn.SetActive(true);
                 if (GlobalVars.CurrentlySelected.name == "TowerBase(Clone)")
                 {
                     levelAttack = GlobalVars.CurrentlySelected.GetComponentInChildren<TowerProperties>().level;
@@ -106,6 +111,7 @@ public class InfoControllertxt : MonoBehaviour
         }
 
         upgradeButton.SetActive(false);
+        SellBtn.SetActive(false);
         if (btn.name == "btnCreateTower_1")
         {
              txt.text = "turrent that shoots in 4 directions";          
@@ -127,10 +133,29 @@ public class InfoControllertxt : MonoBehaviour
             txt.text = "Zapps all enemies in range";
         }
     }
+    
+    public void SellTower(Button btn)
+    {
+        //GlobalVars.CurrentlySelected = btn.gameObject;
+        if(GlobalVars.CurrentlySelected != null)
+        {
+            GlobalVars.G_Money += GlobalVars.CurrentlySelected.GetComponent<TowerPlaceController>().towerCost / 2;
+            Destroy(GlobalVars.CurrentlySelected);
+            GlobalVars.CurrentlySelected = null;
+            upgradeButton.SetActive(false);
+            SellBtn.SetActive(false);
+        }
+        GlobalVars.CurrentlySelected = btn.gameObject;
+    }
+
     // Update is called once per frame
     void Update()
     {
-
+        if(GlobalVars.CurrentlySelected == null)
+        {
+            upgradeButton.SetActive(false);
+            SellBtn.SetActive(false);
+        }
     }
 
 }

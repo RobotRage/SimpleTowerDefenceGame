@@ -28,9 +28,9 @@ public class RaycastingController : MonoBehaviour
                 GlobalVars.CurrentlySelected = hit.collider.gameObject;
                 InfoBox.GetComponent<InfoControllertxt>().OnClickTower();
         }
-        if(Input.GetMouseButtonDown(0) && hit.collider == null)
+        if(Input.GetMouseButtonDown(0) && hit.collider == null && !UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject())
         {
-            //GlobalVars.CurrentlySelected = null;
+            GlobalVars.CurrentlySelected = null;
         }
         if(Input.GetMouseButtonDown(0))
         {
