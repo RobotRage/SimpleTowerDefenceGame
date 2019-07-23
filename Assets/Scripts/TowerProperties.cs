@@ -38,7 +38,7 @@ public class TowerProperties : MonoBehaviour
 
     GameObject parent;
     private Animator parentAnim;
-
+    int Roundangle;
     public GameObject lightningCloud;
     public GameObject Lightningreal;
     void Shoot()
@@ -116,6 +116,13 @@ public class TowerProperties : MonoBehaviour
                 InstantiatedBullet.GetComponent<BulletController>().bulletDamage = 2* damageMultiplier;
             }
         }
+        if(parent.name == "Harpoon_Launcher(Clone)")
+        {
+            InstantiatedBullet = Instantiate(Bullet, gameObject.transform.position, Quaternion.identity);
+            InstantiatedBullet.transform.eulerAngles = new Vector3(0, 0, Roundangle - 90);
+            InstantiatedBullet.GetComponent<BulletController>().bulletDamage = damage;
+            //InstantiatedBullet.GetComponent<BulletController>().Direction = new Vector3(-1, 1, 0);
+        }
     }
 
     //call this whenever there is a ingame buff or nerf that needs to change the properties of the tower
@@ -144,6 +151,11 @@ public class TowerProperties : MonoBehaviour
                 damageMultiplier = (level + 10) / 2;
                 shotCooldownBase = 1;
             }
+            if(parent.name == "Harpoon_Launcher(Clone)")
+            {
+                damageMultiplier = (level + 10) / 2;
+                shotCooldownBase = 0.5f;
+            }
         }
 
         //changes the radius of the range circle based on the range
@@ -151,7 +163,7 @@ public class TowerProperties : MonoBehaviour
 
 
 
-        if(shotCooldown > 0.5)
+        if(shotCooldown > 0.2)
         {
             shotCooldown = shotCooldownBase - (level / 10);
         }
@@ -201,11 +213,33 @@ public class TowerProperties : MonoBehaviour
                 TargetEnemy = EnemiesInRange[0];
 
                 //rotation code
+                if(parent.name == "Harpoon_Launcher(Clone)")
+                {
+                    Vector3 targetRotation = TargetEnemy.transform.position - transform.position;
+                    GameObject parent = transform.parent.gameObject;
+                    float angle = Mathf.Atan2(targetRotation.y, targetRotation.x) * Mathf.Rad2Deg;
+                    Roundangle = (int)Mathf.Round(angle / 45) * 45;
+                    //Roundangle *= -1;
+                    if (TargetEnemy = null)
+                    {
+                        Roundangle = 90;
+                    }
+                    //i dont know ok just roll with it
+                    if(Roundangle == -180)
+                    {
+                        Roundangle = 180;
+                    }
+                   // print(Roundangle);
+                    parent.GetComponent<Animator>().SetInteger("Angle",Roundangle);
+                    
+                    //Quaternion rot = Quaternion.AngleAxis(Roundangle, Vector3.forward) * (Quaternion.AngleAxis(rotationOffset, Vector3.forward));
+                    //parent.transform.rotation = Quaternion.RotateTowards(transform.rotation, rot, Time.deltaTime * TowerRotSpeed);
+                }
 
                 /*
-                Vector3 targetRotation = TargetEnemy.transform.position - transform.position;
-                GameObject parent = transform.parent.gameObject;
-                float angle = Mathf.Atan2(targetRotation.y, targetRotation.x ) * Mathf.Rad2Deg;
+                
+               
+                
                 Quaternion rot = Quaternion.AngleAxis(angle, Vector3.forward) * (Quaternion.AngleAxis(rotationOffset, Vector3.forward));
                 parent.transform.rotation = Quaternion.RotateTowards(transform.rotation , rot , Time.deltaTime * TowerRotSpeed);
                 */

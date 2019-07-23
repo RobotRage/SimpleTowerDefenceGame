@@ -5,7 +5,7 @@ using UnityEngine;
 public class BulletController : MonoBehaviour
 {
     public float bulletDamage;
-    public Vector3 Direction;
+    public Vector3 Direction = new Vector3(0, 1, 0);
     float thrust = 9f;
     SpriteRenderer sprender;
     // Start is called before the first frame update
@@ -60,6 +60,15 @@ public class BulletController : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-       transform.Translate(Direction * thrust * Time.deltaTime);
+
+        if(gameObject.name != "HarpoonBullet(Clone)")
+        {
+            transform.Translate(Direction * thrust * Time.deltaTime);
+        }
+        else
+        {
+            transform.Translate(Vector3.up * thrust * Time.deltaTime);
+        }
+
     }
 }

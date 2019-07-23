@@ -63,9 +63,15 @@ public class TowerCreation : MonoBehaviour
 
         TowerStats RaftTower = new TowerStats();
         RaftTower.TowerName = "RaftTower";
-        RaftTower.TowerCost = 300;
+        RaftTower.TowerCost = 200;
         RaftTower.TowerObj = Towers[5];
         TowerClasses.Add(RaftTower);
+
+        TowerStats HarpoonTower = new TowerStats();
+        HarpoonTower.TowerName = "btnCreateHarpoon";
+        HarpoonTower.TowerCost = 500;
+        HarpoonTower.TowerObj = Towers[6];
+        TowerClasses.Add(HarpoonTower);
     }
 
     // Update is called once per frame
@@ -132,6 +138,7 @@ public class TowerCreation : MonoBehaviour
                     {
                         minimiseGUI.SetActive(false);
                         //instatiate tower and pass cost to the tower place script
+
                         GameObject tower = Instantiate(TempObj.TowerObj, new Vector3(0, 0, 0), Quaternion.identity);
                         tower.GetComponent<TowerPlaceController>().towerCost = TempObj.TowerCost;
                     }

@@ -91,7 +91,20 @@ public class InfoControllertxt : MonoBehaviour
                     txt.text = "NOT ENOUGH GOLD!";
                 }
             }
-            if(GlobalVars.CurrentlySelected.name == "RaftTower(Clone)")
+            if (GlobalVars.CurrentlySelected.name == "Harpoon_Launcher(Clone)" | GlobalVars.CurrentlySelected.name == "Harpoon_Launcher")
+            {
+                if (GlobalVars.G_Money >= levelAttack * 500)
+                {
+                    GlobalVars.G_Money -= levelAttack * 500;
+                    GlobalVars.CurrentlySelected.GetComponentInChildren<TowerProperties>().level++;
+                    txt.text = GlobalVars.CurrentlySelected.name + " has been upgraded to level " + (GlobalVars.CurrentlySelected.GetComponentInChildren<TowerProperties>().level);
+                }
+                else
+                {
+                    txt.text = "NOT ENOUGH GOLD!";
+                }
+            }
+            if (GlobalVars.CurrentlySelected.name == "RaftTower(Clone)")
             {
                 GlobalVars.CurrentlySelected = null;
                 upgradeButton.SetActive(false);
@@ -136,6 +149,11 @@ public class InfoControllertxt : MonoBehaviour
                     levelAttack = GlobalVars.CurrentlySelected.GetComponentInChildren<TowerProperties>().level;
                     txt.text = "Upgrade Witch to level " + (levelAttack + 1) + " for " + levelAttack * 2000 + "$? click hammer button";
                 }
+                if (GlobalVars.CurrentlySelected.name == "Harpoon_Launcher(Clone)")
+                {
+                    levelAttack = GlobalVars.CurrentlySelected.GetComponentInChildren<TowerProperties>().level;
+                    txt.text = "Upgrade Harpoon to level " + (levelAttack + 1) + " for " + levelAttack * 500 + "$? click hammer button";
+                }
             }
         }
         else
@@ -179,6 +197,10 @@ public class InfoControllertxt : MonoBehaviour
         if (btn.name == "RaftTower")
         {
             txt.text = "Allows placement of towers on Raft in water";
+        }
+        if (btn.name == "btnCreateHarpoon")
+        {
+            txt.text = "8 directional targetting tower";
         }
     }
     

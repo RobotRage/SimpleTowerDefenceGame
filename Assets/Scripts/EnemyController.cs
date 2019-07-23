@@ -18,6 +18,7 @@ public class EnemyController : MonoBehaviour
 
     public GameObject explosionObj;
     public GameObject FlameExplosion;
+    public GameObject ArrowExplosion;
     string WhichRow;
     void Start()
     {
@@ -84,6 +85,10 @@ public class EnemyController : MonoBehaviour
             if(collision.gameObject.name == "FlameBullet(Clone)")
             {
                 Instantiate(FlameExplosion, gameObject.transform.position, gameObject.transform.rotation);
+            }
+            if(collision.gameObject.name == "HarpoonBullet(Clone)")
+            {
+                Instantiate(ArrowExplosion, gameObject.transform.position, gameObject.transform.rotation);
             }
 
 

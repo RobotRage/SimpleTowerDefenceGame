@@ -26,11 +26,13 @@ public class TowerPlaceController : MonoBehaviour
     SpriteRenderer m_SpriteRenderer;
     Color col = Color.red;
 
-    bool onRaft = false;
+    int onRaft = 0;
     int notOnEdgeRaft = 0;
     // Start is called before the first frame update
     void Start()
     {
+
+
         m_SpriteRenderer = GetComponent<SpriteRenderer>();
     }
     public void ChildHitTrigger()
@@ -56,7 +58,7 @@ public class TowerPlaceController : MonoBehaviour
             if(collision.gameObject.name == "RaftTower(Clone)")
             {
 
-                onRaft = true;
+                onRaft++;
               //  print(onRaft);
             }
             if (collision.gameObject.tag == "NonValidPlaceLocation" )
@@ -93,7 +95,7 @@ public class TowerPlaceController : MonoBehaviour
         {
             if (collision.gameObject.name == "RaftTower(Clone)")
             {
-                onRaft = false;
+                onRaft--; ;
                // print(onRaft);
             }
             if (collision.gameObject.tag == "NonValidPlaceLocation")
@@ -133,7 +135,10 @@ public class TowerPlaceController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (gameObject.name == "RaftTower(Clone)")
+        {
+            gameObject.transform.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, 1);
+        }
         if (!placed)
         {
             //print(notOnEdgeRaft);
@@ -150,7 +155,7 @@ public class TowerPlaceController : MonoBehaviour
 
             if (gameObject.name != "RaftTower(Clone)")
             {
-                if (notOnEdgeRaft <= 0 && onRaft && NonvalidHitboxCountTower <=0)
+                if (notOnEdgeRaft <= 0 && onRaft == 1 && NonvalidHitboxCountTower <=0)
                 {
                     print("should be zero: "+ notOnEdgeRaft);
                     m_SpriteRenderer.color = Color.white;
