@@ -72,6 +72,7 @@ public class TowerProperties : MonoBehaviour
         }
         if (parent.name == "Flame_Tower_1(Clone)")
         {
+            //add loop here
             //for(int i=0; i<)
 
             InstantiatedBullet = Instantiate(Bullet, gameObject.transform.position, Quaternion.identity);
@@ -89,7 +90,6 @@ public class TowerProperties : MonoBehaviour
             InstantiatedBullet = Instantiate(Bullet, gameObject.transform.position, Quaternion.identity);
             InstantiatedBullet.GetComponent<BulletController>().bulletDamage = damage;
             InstantiatedBullet.GetComponent<BulletController>().Direction = new Vector3(-1, 0, 0);
-
 
             InstantiatedBullet = Instantiate(Bullet, gameObject.transform.position, Quaternion.identity);
             InstantiatedBullet.GetComponent<BulletController>().bulletDamage = damage;
