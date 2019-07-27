@@ -103,7 +103,8 @@ public class EnemyController : MonoBehaviour
     }
 
     void Update()
-    {        
+    {
+        GlobalVars.enemyAlive = true;
         if(baseHp <=0)
         {
             GlobalVars.G_Money += 20;

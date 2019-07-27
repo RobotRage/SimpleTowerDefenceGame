@@ -59,7 +59,6 @@ public class TowerPlaceController : MonoBehaviour
             {
 
                 onRaft++;
-              //  print(onRaft);
             }
             if (collision.gameObject.tag == "NonValidPlaceLocation" )
             {

@@ -20,6 +20,7 @@ public class GlobalVars : MonoBehaviour
     /// 
     /// </TODO>
 
+    // edit this var to gib big cash money
     public static int G_Money = 9999;
 
     public static float Hp_Left = 500;
@@ -32,6 +33,10 @@ public class GlobalVars : MonoBehaviour
     public static GameObject CurrentlySelected;
 
     public static bool toggleClick = false;
+
+    public static int WaveNum = 0;
+
+    public static bool enemyAlive;
     // Start is called before the first frame update
     void Start()
     {
@@ -41,6 +46,7 @@ public class GlobalVars : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         if(Hp_Mid <= 0)
         {
             print("Game over man, game over");
