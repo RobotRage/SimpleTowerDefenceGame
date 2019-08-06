@@ -1,43 +1,31 @@
 fileFormatVersion: 2
-guid: a9b787deea07e6e41a83437de052e141
+guid: 59cb269ffbfbbc046808e61205db91f5
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1473525140290948644
-    second: Tiny_Pirate_Rafts_0
+      213: -154662568541832022
+    second: Green_Cross_Ship_0
   - first:
-      213: 5554315281569168109
-    second: Tiny_Pirate_Rafts_1
+      213: 2379130042103896209
+    second: Green_Cross_Ship_1
   - first:
-      213: 5063204479066975047
-    second: Tiny_Pirate_Rafts_2
+      213: 3379765763270793981
+    second: Green_Cross_Ship_2
   - first:
-      213: -5443445891242078752
-    second: Tiny_Pirate_Rafts_3
+      213: -9137714557371084538
+    second: Green_Cross_Ship_3
   - first:
-      213: 3233044192772715202
-    second: Tiny_Pirate_Rafts_4
+      213: -670646347498145449
+    second: Green_Cross_Ship_4
   - first:
-      213: 8252291304036400246
-    second: Tiny_Pirate_Rafts_5
+      213: 6921486599569268461
+    second: Green_Cross_Ship_5
   - first:
-      213: -4771211534316104015
-    second: Tiny_Pirate_Rafts_6
+      213: -4503852958536119077
+    second: Green_Cross_Ship_6
   - first:
-      213: -8489041926782686973
-    second: Tiny_Pirate_Rafts_7
-  - first:
-      213: 76463368251635365
-    second: Tiny_Pirate_Rafts_8
-  - first:
-      213: -2077436550657191514
-    second: Tiny_Pirate_Rafts_9
-  - first:
-      213: 6844994247257468252
-    second: Tiny_Pirate_Rafts_10
-  - first:
-      213: -4953507276086876812
-    second: Tiny_Pirate_Rafts_11
+      213: -645659101027410713
+    second: Green_Cross_Ship_7
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -96,7 +84,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 8192
+    maxTextureSize: 4096
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -108,7 +96,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
-    maxTextureSize: 8192
+    maxTextureSize: 4096
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -120,7 +108,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: WebGL
-    maxTextureSize: 8192
+    maxTextureSize: 4096
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -134,76 +122,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Tiny_Pirate_Rafts_0
-      rect:
-        serializedVersion: 2
-        x: 17
-        y: 83
-        width: 13
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d13e08c28176679439da116150528841
-      internalID: 1473525140290948644
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Tiny_Pirate_Rafts_1
-      rect:
-        serializedVersion: 2
-        x: 33
-        y: 83
-        width: 13
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b3d358dfa3f84dd409502521a4908de0
-      internalID: 5554315281569168109
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Tiny_Pirate_Rafts_2
-      rect:
-        serializedVersion: 2
-        x: 49
-        y: 83
-        width: 13
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2e2a455fe139a7b48bb4d001755f7693
-      internalID: 5063204479066975047
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Tiny_Pirate_Rafts_3
+      name: Green_Cross_Ship_0
       rect:
         serializedVersion: 2
         x: 18
-        y: 66
+        y: 16
         width: 11
-        height: 11
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -211,20 +136,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dfa37eaa6e9cb1547a7ec74326263bea
-      internalID: -5443445891242078752
+      spriteID: 56bb6dc46b8718348bf925fa1416c024
+      internalID: -154662568541832022
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tiny_Pirate_Rafts_4
+      name: Green_Cross_Ship_1
       rect:
         serializedVersion: 2
         x: 34
-        y: 66
+        y: 16
         width: 11
-        height: 11
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -232,20 +157,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9cb7773d153457e47b153f986bed2886
-      internalID: 3233044192772715202
+      spriteID: 3f52c881684c2db499d5a559c7bedbf4
+      internalID: 2379130042103896209
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tiny_Pirate_Rafts_5
+      name: Green_Cross_Ship_2
       rect:
         serializedVersion: 2
         x: 50
-        y: 66
+        y: 16
         width: 11
-        height: 11
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -253,20 +178,41 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 37e3afd80f4a8974ebaf2776b7c951c8
-      internalID: 8252291304036400246
+      spriteID: a7cb8552ff0196b41ad546ca1215dc83
+      internalID: 3379765763270793981
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tiny_Pirate_Rafts_6
+      name: Green_Cross_Ship_3
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 16
+        width: 11
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c51cbbafd8b03564791906e30e942f87
+      internalID: -9137714557371084538
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Green_Cross_Ship_4
       rect:
         serializedVersion: 2
         x: 17
-        y: 35
-        width: 13
-        height: 12
+        y: 2
+        width: 15
+        height: 14
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -274,20 +220,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 876c342f3d3c10648923ac1116e33af1
-      internalID: -4771211534316104015
+      spriteID: a07d80d5c7aa6bf4ab7aa9ae05d6bf2c
+      internalID: -670646347498145449
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tiny_Pirate_Rafts_7
+      name: Green_Cross_Ship_5
       rect:
         serializedVersion: 2
         x: 33
-        y: 35
-        width: 13
-        height: 12
+        y: 2
+        width: 15
+        height: 14
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -295,20 +241,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 14686dc658b908743ba8e97dd2cb0e83
-      internalID: -8489041926782686973
+      spriteID: 4001646645d312e40b47e54eb1e298ee
+      internalID: 6921486599569268461
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tiny_Pirate_Rafts_8
+      name: Green_Cross_Ship_6
       rect:
         serializedVersion: 2
         x: 49
-        y: 35
-        width: 13
-        height: 12
+        y: 2
+        width: 15
+        height: 14
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -316,20 +262,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0a365418157cef54d94d1ff6e3c5fe87
-      internalID: 76463368251635365
+      spriteID: c4ca3f7fd93f44e44a86ea86588593f6
+      internalID: -4503852958536119077
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tiny_Pirate_Rafts_9
+      name: Green_Cross_Ship_7
       rect:
         serializedVersion: 2
-        x: 18
-        y: 17
-        width: 11
-        height: 13
+        x: 64
+        y: 2
+        width: 16
+        height: 14
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -337,50 +283,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0a0b3918993c994428d6ea2471d24fb5
-      internalID: -2077436550657191514
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Tiny_Pirate_Rafts_10
-      rect:
-        serializedVersion: 2
-        x: 34
-        y: 17
-        width: 11
-        height: 13
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: eb9e41a12ea0cb445af6802acb42cc2c
-      internalID: 6844994247257468252
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Tiny_Pirate_Rafts_11
-      rect:
-        serializedVersion: 2
-        x: 50
-        y: 17
-        width: 11
-        height: 13
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 404e9fa789b20404ca6d60e49251017a
-      internalID: -4953507276086876812
+      spriteID: 9ea9e14fbe41e4f4a9efcc449e7b5db3
+      internalID: -645659101027410713
       vertices: []
       indices: 
       edges: []

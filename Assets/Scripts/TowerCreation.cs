@@ -33,7 +33,7 @@ public class TowerCreation : MonoBehaviour
 
         TowerStats BaseTower = new TowerStats();
         BaseTower.TowerName = "btnCreateTower_1";
-        BaseTower.TowerCost = 10;
+        BaseTower.TowerCost = 50;
         BaseTower.TowerObj = Towers[0];
         TowerClasses.Add(BaseTower);
 

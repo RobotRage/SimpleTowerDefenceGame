@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GlobalVars : MonoBehaviour
 {
@@ -21,7 +22,7 @@ public class GlobalVars : MonoBehaviour
     /// </TODO>
 
     // edit this var to gib big cash money
-    public static int G_Money = 9999;
+    public static int G_Money = 40;
 
     public static float Hp_Left = 500;
     public static float Hp_Right = 500;
@@ -37,10 +38,43 @@ public class GlobalVars : MonoBehaviour
     public static int WaveNum = 0;
 
     public static bool enemyAlive;
+
+    public GameObject DeathScreen;
     // Start is called before the first frame update
     void Start()
     {
-        
+        G_Money = 200;
+        Hp_Left = 500;
+        Hp_Right = 500;
+        Hp_Mid = 1000;
+
+        DebuffDamage = 1;
+        DebuffShotSpeed = 1;
+
+        WaveNum = 0;
+
+        toggleClick = false;
+    }
+
+    public void ReloadScene()
+    {
+        G_Money = 40;
+        Hp_Left = 500;
+        Hp_Right = 500;
+        Hp_Mid = 1000;
+
+        DebuffDamage = 1;
+        DebuffShotSpeed = 1;
+
+        WaveNum = 0;
+
+        toggleClick = false;
+        SceneManager.LoadScene("MainScene");
+    }
+
+    public void ReturnToMenu()
+    {
+        SceneManager.LoadScene("TitleScene");
     }
 
     // Update is called once per frame
@@ -50,14 +84,23 @@ public class GlobalVars : MonoBehaviour
         if(Hp_Mid <= 0)
         {
             print("Game over man, game over");
+            DeathScreen.SetActive(true);
+        }
+        else
+        {
+            DeathScreen.SetActive(false);
         }
         if(Hp_Left <= 0)
         {
+            Destroy(GameObject.Find("SpawnerLeft"));
             DebuffDamage = 2;
         }
         if (Hp_Right <= 0)
         {
+            Destroy(GameObject.Find("SpawnerRight"));
             DebuffShotSpeed = 2;
         }
+
+        
     }
 }

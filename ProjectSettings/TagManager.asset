@@ -17,6 +17,9 @@ TagManager:
   - EnemyRight
   - enemyPath
   - OnRaft
+  - Down
+  - Left
+  - Right
   layers:
   - Default
   - TransparentFX

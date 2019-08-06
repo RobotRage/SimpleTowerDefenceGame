@@ -138,8 +138,8 @@ public class TowerProperties : MonoBehaviour
             }
             if (parent.name == "Cannons(Clone)")
             {
-                damageMultiplier = (level + 3f) / 2;
-                shotCooldownBase = 3;
+                damageMultiplier = (level + 4f) / 2;
+                shotCooldownBase = 2;
             }
             if(parent.name == "Flame_Tower_1(Clone)")
             {
@@ -153,7 +153,7 @@ public class TowerProperties : MonoBehaviour
             }
             if(parent.name == "Harpoon_Launcher(Clone)")
             {
-                damageMultiplier = (level + 10) / 2;
+                damageMultiplier = (level + 2f) / 2;
                 shotCooldownBase = 0.5f;
             }
         }

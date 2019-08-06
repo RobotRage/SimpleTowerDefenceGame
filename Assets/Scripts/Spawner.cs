@@ -7,18 +7,25 @@ public class Spawner : MonoBehaviour
     //colby's code
     
     public GameObject enemy;
-    public GameObject enemyTank;
-    public GameObject enemySpeed;
-    public GameObject enemyHeckingChonker;
+    public GameObject yellowSunShip;
+    public GameObject redSkullShip;
+    public GameObject greenCrossShip;
+    public GameObject SharkShip;
+
 
     bool switches = false;
     GameObject[] enemies;
 
-    float delayMid = 3f;
-    float delay = 3f;
+    float delayMid = 2f;
+    float delay = 2f;
 
     GameObject obj;
     int spawnCount = GlobalVars.WaveNum + 1;
+
+    int spawnCountYellow = (int)Mathf.Floor(GlobalVars.WaveNum / 5);
+    int spawnCountRed = (int)Mathf.Floor(GlobalVars.WaveNum/3);
+    int spawnCountGreen = (int)Mathf.Floor(GlobalVars.WaveNum / 8);
+    int spawnCountShark = (int)Mathf.Floor(GlobalVars.WaveNum / 15);
 
     void Start()
     {
@@ -26,35 +33,51 @@ public class Spawner : MonoBehaviour
     }
     IEnumerator endRound(float rounddelay)
     {
-
         yield return new WaitForSeconds(rounddelay);
+        if(delay > 0.5)
+        {
+            delay -= 0.05f;
+        }
+        if (delayMid > 0.4)
+        {
+            delayMid -= 0.07f;
+        }
+
+
         switches = false;
         if(gameObject.name == "Spawner")
         {
-            spawnCount = (GlobalVars.WaveNum * 2) + 1;
+            spawnCount = (GlobalVars.WaveNum);
         }
         else
         {
-            spawnCount = (GlobalVars.WaveNum) + 1;
+            spawnCount = (GlobalVars.WaveNum);
         }
-
+        spawnCountYellow = (int)Mathf.Floor(GlobalVars.WaveNum / 6);
+        spawnCountRed = (int)Mathf.Floor(GlobalVars.WaveNum / 3);
+        spawnCountGreen = (int)Mathf.Floor(GlobalVars.WaveNum / 8);
+        spawnCountShark = (int)Mathf.Floor(GlobalVars.WaveNum / 15);
         Spawn();
 
 
-
+        
 
         //spawnCount = 1 + (GlobalVars.WaveNum);
 
     }
     private void FixedUpdate()
     {
+        if (GlobalVars.Hp_Mid <= 0)
+        {
+            Destroy(gameObject);
+        }
         enemies = GameObject.FindGameObjectsWithTag("Enemy");
     }
     void Spawn()
     {
-        if (spawnCount <=0 && enemies.Length <= 0)
+        if (spawnCount <=0 && enemies.Length <= 0 && spawnCountRed<=0 && spawnCountYellow<=0 && spawnCountGreen<=0 && spawnCountShark <= 0)
         {
-            if(switches == false)
+            if(switches == false && GlobalVars.Hp_Mid > 0)
             {
                 switches = true;
                 StartCoroutine(endRound(5));
@@ -65,15 +88,12 @@ public class Spawner : MonoBehaviour
                     print(GlobalVars.WaveNum);
                 }
             }
-
         }
         else
         {
             if (spawnCount > 0)
             {
                 spawnCount--;
-
-
                 if ((gameObject.name == "SpawnerLeft" | gameObject.name == "SpawnerRight") && GlobalVars.WaveNum == 0)
                 {
 
@@ -83,16 +103,12 @@ public class Spawner : MonoBehaviour
                     obj = Instantiate(enemy, transform.position, transform.rotation);
                 }
 
-
-
                 if (gameObject.name == "SpawnerLeft")
                 {
                     if (obj != null)
                     {
                         obj.tag = "EnemyLeft";
                     }
-
-
                 }
                 if (gameObject.name == "SpawnerRight")
                 {
@@ -100,19 +116,124 @@ public class Spawner : MonoBehaviour
                     {
                         obj.tag = "EnemyRight";
                     }
+                }
+            }
+            else if(spawnCountRed > 0)
+            {
+                spawnCountRed--;
+                if ((gameObject.name == "SpawnerLeft" | gameObject.name == "SpawnerRight") && GlobalVars.WaveNum == 0)
+                {
 
                 }
-                if (gameObject.name == "Spawner")
+                else
                 {
-                    if (delay >= 1)
-                    {
-                        delayMid = delay - 1;
+                    obj = Instantiate(redSkullShip, transform.position, transform.rotation);
+                }
 
+                if (gameObject.name == "SpawnerLeft")
+                {
+                    if (obj != null)
+                    {
+                        obj.tag = "EnemyLeft";
                     }
                 }
-
+                if (gameObject.name == "SpawnerRight")
+                {
+                    if (obj != null)
+                    {
+                        obj.tag = "EnemyRight";
+                    }
+                }
             }
-            StartCoroutine(Wait(delayMid));
+            else if(spawnCountYellow >0)
+            {
+                spawnCountYellow--;
+                if ((gameObject.name == "SpawnerLeft" | gameObject.name == "SpawnerRight") && GlobalVars.WaveNum == 0)
+                {
+
+                }
+                else
+                {
+                    obj = Instantiate(yellowSunShip, transform.position, transform.rotation);
+                }
+
+                if (gameObject.name == "SpawnerLeft")
+                {
+                    if (obj != null)
+                    {
+                        obj.tag = "EnemyLeft";
+                    }
+                }
+                if (gameObject.name == "SpawnerRight")
+                {
+                    if (obj != null)
+                    {
+                        obj.tag = "EnemyRight";
+                    }
+                }
+            }
+            else if (spawnCountGreen > 0)
+            {
+                spawnCountGreen--;
+                if ((gameObject.name == "SpawnerLeft" | gameObject.name == "SpawnerRight") && GlobalVars.WaveNum == 0)
+                {
+
+                }
+                else
+                {
+                    obj = Instantiate(greenCrossShip, transform.position, transform.rotation);
+                }
+
+                if (gameObject.name == "SpawnerLeft")
+                {
+                    if (obj != null)
+                    {
+                        obj.tag = "EnemyLeft";
+                    }
+                }
+                if (gameObject.name == "SpawnerRight")
+                {
+                    if (obj != null)
+                    {
+                        obj.tag = "EnemyRight";
+                    }
+                }
+            }
+            else if (spawnCountShark > 0)
+            {
+                spawnCountShark--;
+                if ((gameObject.name == "SpawnerLeft" | gameObject.name == "SpawnerRight") && GlobalVars.WaveNum == 0)
+                {
+
+                }
+                else
+                {
+                    obj = Instantiate(SharkShip, transform.position, transform.rotation);
+                }
+
+                if (gameObject.name == "SpawnerLeft")
+                {
+                    if (obj != null)
+                    {
+                        obj.tag = "EnemyLeft";
+                    }
+                }
+                if (gameObject.name == "SpawnerRight")
+                {
+                    if (obj != null)
+                    {
+                        obj.tag = "EnemyRight";
+                    }
+                }
+            }
+            if (gameObject.name != "Spawner")
+            {
+                StartCoroutine(Wait(delay));
+            }
+            else
+            {
+                StartCoroutine(Wait(delayMid));
+            }
         }    
     }
 

@@ -1,43 +1,31 @@
 fileFormatVersion: 2
-guid: a9b787deea07e6e41a83437de052e141
+guid: 9a5b791f09884f14aaac1a19b8ef37fa
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1473525140290948644
-    second: Tiny_Pirate_Rafts_0
+      213: -7029421831946368386
+    second: Yellow_Sun_Ship_0
   - first:
-      213: 5554315281569168109
-    second: Tiny_Pirate_Rafts_1
+      213: 8530245375385422633
+    second: Yellow_Sun_Ship_1
   - first:
-      213: 5063204479066975047
-    second: Tiny_Pirate_Rafts_2
+      213: 6522764231159406925
+    second: Yellow_Sun_Ship_2
   - first:
-      213: -5443445891242078752
-    second: Tiny_Pirate_Rafts_3
+      213: -9060078411944569744
+    second: Yellow_Sun_Ship_3
   - first:
-      213: 3233044192772715202
-    second: Tiny_Pirate_Rafts_4
+      213: 836971366688168493
+    second: Yellow_Sun_Ship_4
   - first:
-      213: 8252291304036400246
-    second: Tiny_Pirate_Rafts_5
+      213: -8063428731542053814
+    second: Yellow_Sun_Ship_5
   - first:
-      213: -4771211534316104015
-    second: Tiny_Pirate_Rafts_6
+      213: -2401220220233149266
+    second: Yellow_Sun_Ship_6
   - first:
-      213: -8489041926782686973
-    second: Tiny_Pirate_Rafts_7
-  - first:
-      213: 76463368251635365
-    second: Tiny_Pirate_Rafts_8
-  - first:
-      213: -2077436550657191514
-    second: Tiny_Pirate_Rafts_9
-  - first:
-      213: 6844994247257468252
-    second: Tiny_Pirate_Rafts_10
-  - first:
-      213: -4953507276086876812
-    second: Tiny_Pirate_Rafts_11
+      213: -7198020720590622910
+    second: Yellow_Sun_Ship_7
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -134,13 +122,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Tiny_Pirate_Rafts_0
+      name: Yellow_Sun_Ship_0
       rect:
         serializedVersion: 2
         x: 17
-        y: 83
-        width: 13
-        height: 8
+        y: 16
+        width: 14
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -148,20 +136,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d13e08c28176679439da116150528841
-      internalID: 1473525140290948644
+      spriteID: 30b41ec76afc20a499d698ae1b7e2410
+      internalID: -7029421831946368386
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tiny_Pirate_Rafts_1
+      name: Yellow_Sun_Ship_1
       rect:
         serializedVersion: 2
         x: 33
-        y: 83
-        width: 13
-        height: 8
+        y: 16
+        width: 14
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -169,20 +157,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b3d358dfa3f84dd409502521a4908de0
-      internalID: 5554315281569168109
+      spriteID: c09405bfcb430134b9bbc9aeda670e63
+      internalID: 8530245375385422633
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tiny_Pirate_Rafts_2
+      name: Yellow_Sun_Ship_2
       rect:
         serializedVersion: 2
         x: 49
-        y: 83
-        width: 13
-        height: 8
+        y: 16
+        width: 14
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -190,20 +178,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2e2a455fe139a7b48bb4d001755f7693
-      internalID: 5063204479066975047
+      spriteID: dc3ff1ad72d181f45804a31635692f40
+      internalID: 6522764231159406925
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tiny_Pirate_Rafts_3
+      name: Yellow_Sun_Ship_3
       rect:
         serializedVersion: 2
-        x: 18
-        y: 66
-        width: 11
-        height: 11
+        x: 65
+        y: 16
+        width: 14
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -211,20 +199,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dfa37eaa6e9cb1547a7ec74326263bea
-      internalID: -5443445891242078752
+      spriteID: d869f1bbd9dfadc45ba41e8750d7994e
+      internalID: -9060078411944569744
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tiny_Pirate_Rafts_4
+      name: Yellow_Sun_Ship_4
       rect:
         serializedVersion: 2
-        x: 34
-        y: 66
-        width: 11
-        height: 11
+        x: 16
+        y: 0
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -232,20 +220,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9cb7773d153457e47b153f986bed2886
-      internalID: 3233044192772715202
+      spriteID: 622beed5767b5bb4786e356e1bed3559
+      internalID: 836971366688168493
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tiny_Pirate_Rafts_5
+      name: Yellow_Sun_Ship_5
       rect:
         serializedVersion: 2
-        x: 50
-        y: 66
-        width: 11
-        height: 11
+        x: 32
+        y: 0
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -253,20 +241,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 37e3afd80f4a8974ebaf2776b7c951c8
-      internalID: 8252291304036400246
+      spriteID: d72077f6e10cfee41b3d58caf037418a
+      internalID: -8063428731542053814
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tiny_Pirate_Rafts_6
+      name: Yellow_Sun_Ship_6
       rect:
         serializedVersion: 2
-        x: 17
-        y: 35
-        width: 13
-        height: 12
+        x: 48
+        y: 0
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -274,20 +262,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 876c342f3d3c10648923ac1116e33af1
-      internalID: -4771211534316104015
+      spriteID: 599166bbf3bc477459e7295dbcae424d
+      internalID: -2401220220233149266
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tiny_Pirate_Rafts_7
+      name: Yellow_Sun_Ship_7
       rect:
         serializedVersion: 2
-        x: 33
-        y: 35
-        width: 13
-        height: 12
+        x: 64
+        y: 0
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -295,92 +283,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 14686dc658b908743ba8e97dd2cb0e83
-      internalID: -8489041926782686973
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Tiny_Pirate_Rafts_8
-      rect:
-        serializedVersion: 2
-        x: 49
-        y: 35
-        width: 13
-        height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0a365418157cef54d94d1ff6e3c5fe87
-      internalID: 76463368251635365
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Tiny_Pirate_Rafts_9
-      rect:
-        serializedVersion: 2
-        x: 18
-        y: 17
-        width: 11
-        height: 13
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0a0b3918993c994428d6ea2471d24fb5
-      internalID: -2077436550657191514
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Tiny_Pirate_Rafts_10
-      rect:
-        serializedVersion: 2
-        x: 34
-        y: 17
-        width: 11
-        height: 13
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: eb9e41a12ea0cb445af6802acb42cc2c
-      internalID: 6844994247257468252
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Tiny_Pirate_Rafts_11
-      rect:
-        serializedVersion: 2
-        x: 50
-        y: 17
-        width: 11
-        height: 13
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 404e9fa789b20404ca6d60e49251017a
-      internalID: -4953507276086876812
+      spriteID: 923d5e0ab07877e41993cfe13b8dfb28
+      internalID: -7198020720590622910
       vertices: []
       indices: 
       edges: []
