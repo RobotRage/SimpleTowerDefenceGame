@@ -30,19 +30,19 @@ public class EnemyController : MonoBehaviour
         anim = GetComponent<Animator>();
         if(gameObject.name == "Yellow_Sun_Ship(Clone)")
         {
-            baseHp = 250;
+            baseHp = 250 + GlobalVars.WaveNum * 5;
         }
         else if (gameObject.name == "Red_Skull_Ship(Clone)")
         {
-            baseHp = 100;
+            baseHp = 100 + GlobalVars.WaveNum * 5;
         }
         else if (gameObject.name == "Green_Cross_Ship(Clone)")
         {
-            baseHp = 200;
+            baseHp = 200 + GlobalVars.WaveNum * 5;
         }
         else if(gameObject.name == "SharkEnemy(Clone)")
         {
-            baseHp = 100;
+            baseHp = 100 + GlobalVars.WaveNum * 5;
         }
         //sets the hp bars lengths to the baseHp value
         GreenHP.transform.localScale = new Vector3(baseHp / 100, 3f, 0);
@@ -98,7 +98,7 @@ public class EnemyController : MonoBehaviour
             {
                 targets.RemoveAt(0);
             }
-            Debug.Log(Dir);
+           // Debug.Log(Dir);
         }
         else if(collision.gameObject.tag == "Left")
         {
@@ -107,7 +107,7 @@ public class EnemyController : MonoBehaviour
             {
                 targets.RemoveAt(0);
             }
-            Debug.Log(Dir);
+            //Debug.Log(Dir);
         }
         else if (collision.gameObject.tag == "Right")
         {
@@ -116,7 +116,7 @@ public class EnemyController : MonoBehaviour
             {
                 targets.RemoveAt(0);
             }
-            Debug.Log(Dir);
+            //Debug.Log(Dir);
         }
 
 
@@ -129,7 +129,7 @@ public class EnemyController : MonoBehaviour
             {
                 targets.RemoveAt(0);
             }
-            Debug.Log(Dir);
+           // Debug.Log(Dir);
         }
 
         if(collision.gameObject.tag == "Bullet")

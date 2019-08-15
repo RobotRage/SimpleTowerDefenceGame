@@ -8,10 +8,15 @@ public class RaycastingController : MonoBehaviour
     // Colby's Code
     public GameObject InfoBox;
     public GameObject lasttouched;
+
+    public AudioClip mouseClick;
+
+    AudioSource UIAudio;
+    public GameObject AudioObjUI;
     // Start is called before the first frame update
     void Start()
     {
-        
+        UIAudio = AudioObjUI.GetComponent<AudioSource>();
     }
     void OnBecameInvisible()
     {
@@ -26,49 +31,54 @@ public class RaycastingController : MonoBehaviour
             if (Input.GetMouseButtonDown(0) && hit.collider != null && hit.collider.name != "RaftTower(Clone)" && hit.collider.tag != "OnRaft")
             {
                 GlobalVars.CurrentlySelected = hit.collider.gameObject;
+                Debug.Log(hit.collider.gameObject);
                 InfoBox.GetComponent<InfoControllertxt>().OnClickTower();
             }
             if (Input.GetMouseButtonDown(0) && hit.collider == null && !UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject())
             {
+                Debug.Log("null hit");
                 GlobalVars.CurrentlySelected = null;
             }
             if (Input.GetMouseButtonDown(0))
             {
-                if (lasttouched != null)
+                if (lasttouched != null && lasttouched != GlobalVars.CurrentlySelected)
                 {
                     if (lasttouched.gameObject.transform.GetChild(0).GetComponent<SpriteRenderer>() != null)
                     {
                         lasttouched.gameObject.transform.GetChild(0).GetComponent<SpriteRenderer>().enabled = false;
                     }
-
                 }
                 // Checks if ray hit something
                 if (hit.collider != null && hit.collider.name != "RaftTower(Clone)")
                 {
-                    // Logic concerning placed buildings
-                    if (hit.collider.gameObject.tag == "Placed")
+                // Logic concerning placed buildings
+                if (hit.collider.gameObject.tag == "Placed")
+                {
+
+                    // Checks if this object is not what the mouse was on last frame
+                    //  if (lasttouched != hit.collider.gameObject)
+                    //  {
+                    if (hit.collider.gameObject.transform.GetChild(0).GetComponent<SpriteRenderer>() != null)
                     {
-
-                        // Checks if this object is not what the mouse was on last frame
-                        if (lasttouched != hit.collider.gameObject)
-                        {
-                            if (hit.collider.gameObject.transform.GetChild(0).GetComponent<SpriteRenderer>() != null)
-                            {
-                                // Enable the spriterenderer for range circle
-                                hit.collider.gameObject.transform.GetChild(0).GetComponent<SpriteRenderer>().enabled = true;
-                            }
-                        }
-
-                        lasttouched = hit.collider.gameObject;
-                        // Right mouse button
-                        if (Input.GetMouseButtonDown(1))
-                        {
-                            // Give back half of the original cost
-
-                            GlobalVars.G_Money += hit.collider.gameObject.GetComponent<TowerPlaceController>().towerCost / 2;
-                            Destroy(hit.collider.gameObject);
-                        }
+                        // Enable the spriterenderer for range circle
+                        hit.collider.gameObject.transform.GetChild(0).GetComponent<SpriteRenderer>().enabled = true;
                     }
+                    //  }
+
+                    lasttouched = hit.collider.gameObject;
+                    // Right mouse button
+                    if (Input.GetMouseButtonDown(1))
+                    {
+                        // Give back half of the original cost
+
+                        GlobalVars.G_Money += hit.collider.gameObject.GetComponent<TowerPlaceController>().towerCost / 2;
+                        Destroy(hit.collider.gameObject);
+                    }
+                }
+                else if (hit.collider.gameObject.tag == "Unplaced")
+                {
+                    UIAudio.PlayOneShot(mouseClick, 0.25f);
+                }
                 }
                 else // Mouse is not on an object
                 {

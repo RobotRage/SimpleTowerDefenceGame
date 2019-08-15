@@ -22,7 +22,7 @@ public class GlobalVars : MonoBehaviour
     /// </TODO>
 
     // edit this var to gib big cash money
-    public static int G_Money = 40;
+    public static int G_Money = 200;
 
     public static float Hp_Left = 500;
     public static float Hp_Right = 500;
@@ -40,6 +40,9 @@ public class GlobalVars : MonoBehaviour
     public static bool enemyAlive;
 
     public GameObject DeathScreen;
+    public GameObject MusicPlayer;
+    public GameObject endSound;
+    bool playOnce = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -58,7 +61,7 @@ public class GlobalVars : MonoBehaviour
 
     public void ReloadScene()
     {
-        G_Money = 40;
+        G_Money = 200;
         Hp_Left = 500;
         Hp_Right = 500;
         Hp_Mid = 1000;
@@ -80,11 +83,17 @@ public class GlobalVars : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         if(Hp_Mid <= 0)
         {
             print("Game over man, game over");
             DeathScreen.SetActive(true);
+            MusicPlayer.GetComponent<AudioSource>().Stop();
+            if(!playOnce)
+            {
+                endSound.GetComponent<AudioSource>().Play();
+                playOnce = true;
+            }
+
         }
         else
         {

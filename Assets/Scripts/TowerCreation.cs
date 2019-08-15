@@ -7,6 +7,12 @@ using UnityEngine.EventSystems;
 
 public class TowerCreation : MonoBehaviour
 {
+    public AudioClip mouseClick;
+    public AudioClip Error;
+    AudioSource UIAudio;
+    public GameObject AudioObjUI;
+
+
     public GameObject infoBox;
     
     public GameObject minimiseGUI;
@@ -30,6 +36,8 @@ public class TowerCreation : MonoBehaviour
     {
         //YOU MUST INITIALISE TOWERS HERE
         //TOWER NAME MUST BE THE SAME AS THE BUTTON NAME
+
+        UIAudio = AudioObjUI.GetComponent<AudioSource>();
 
         TowerStats BaseTower = new TowerStats();
         BaseTower.TowerName = "btnCreateTower_1";
@@ -103,6 +111,7 @@ public class TowerCreation : MonoBehaviour
     //function is called when any button is pressed (must be assigned when new button is created)
     public void CreateTower()
     {
+        UIAudio.PlayOneShot(mouseClick, 0.25f);
 
         InfoControllertxt info = infoBox.GetComponent<InfoControllertxt>();
 
@@ -138,12 +147,13 @@ public class TowerCreation : MonoBehaviour
                     {
                         minimiseGUI.SetActive(false);
                         //instatiate tower and pass cost to the tower place script
-
+                        UIAudio.PlayOneShot(mouseClick, 0.25f);
                         GameObject tower = Instantiate(TempObj.TowerObj, new Vector3(0, 0, 0), Quaternion.identity);
                         tower.GetComponent<TowerPlaceController>().towerCost = TempObj.TowerCost;
                     }
                     else
                     {
+                        UIAudio.PlayOneShot(Error, 0.25f);
                         info.txt.text = "NOT ENOUGH GOLD!";
                     }
                 }

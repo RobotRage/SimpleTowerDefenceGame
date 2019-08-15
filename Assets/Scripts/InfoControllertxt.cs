@@ -10,12 +10,50 @@ public class InfoControllertxt : MonoBehaviour
     public GameObject infoBox;
     public GameObject upgradeButton;
     public GameObject SellBtn;
+
+    public AudioClip mouseClick;
+    public AudioClip hoverMouse;
+    public AudioClip errorSound;
+    public AudioClip cashRegister;
+    public AudioClip upgrade;
+
+    AudioSource UIAudio;
+    AudioSource Music;
+    AudioSource endSource;
+
+    public GameObject AudioObjUI;
+    public GameObject AudioMusic;
+    public GameObject endSound;
+
+    public static float MuicVol = 0.1f;
+    public static float SoundFx = 1f;
+
+    public GameObject SliderMusic;
+    public GameObject SliderSound;
+    
     // Start is called before the first frame update
     void Start()
     {
         txt = gameObject.GetComponent<Text>();
         upgradeButton.SetActive(false);
         SellBtn.SetActive(false);
+        UIAudio = AudioObjUI.GetComponent<AudioSource>();
+        Music= AudioMusic.GetComponent<AudioSource>();
+        endSource = endSound.GetComponent<AudioSource>();
+
+        SliderMusic.GetComponent<Slider>().value = MuicVol;
+        SliderSound.GetComponent<Slider>().value = SoundFx;
+    }
+    public void MusicVol(Slider slider)
+    {
+        MuicVol = slider.value;
+        Music.GetComponent<AudioSource>().volume = MuicVol;
+    }
+    public void SoundFX(Slider slider)
+    {
+        SoundFx = slider.value;
+        UIAudio.GetComponent<AudioSource>().volume = SoundFx;
+        endSource.GetComponent<AudioSource>().volume = SoundFx;
     }
     public void OnClickUpgrade(Button btn)
     {
@@ -23,16 +61,20 @@ public class InfoControllertxt : MonoBehaviour
 
         if(GlobalVars.CurrentlySelected != null)
         {
+            UIAudio.PlayOneShot(mouseClick, 0.25f);
             if (GlobalVars.CurrentlySelected.name == "TowerBase(Clone)" | GlobalVars.CurrentlySelected.name == "TowerBase" )
-            {            
-                if(GlobalVars.G_Money >= levelAttack * 500)
+            {
+               
+                if (GlobalVars.G_Money >= levelAttack * 500)
                 {
+                    UIAudio.PlayOneShot(upgrade, 0.25f);
                     GlobalVars.G_Money -= levelAttack * 500;
                     GlobalVars.CurrentlySelected.GetComponentInChildren<TowerProperties>().level++;
                     txt.text = GlobalVars.CurrentlySelected.name + " has been upgraded to level " + (GlobalVars.CurrentlySelected.GetComponentInChildren<TowerProperties>().level);
                 }
                 else
                 {
+                    UIAudio.PlayOneShot(errorSound, 0.5f);
                     txt.text = "NOT ENOUGH GOLD!";
                 }
             }
@@ -41,12 +83,14 @@ public class InfoControllertxt : MonoBehaviour
             {
                 if(GlobalVars.G_Money >= levelPasive * 600)
                 {
+                    UIAudio.PlayOneShot(upgrade, 0.25f);
                     GlobalVars.G_Money -= levelPasive * 600;
                     GlobalVars.CurrentlySelected.GetComponent<MoneyGenTowerController>().level++;
                     txt.text = GlobalVars.CurrentlySelected.name + " has been upgraded to level " + (GlobalVars.CurrentlySelected.GetComponent<MoneyGenTowerController>().level);
                 }
                 else
                 {
+                    UIAudio.PlayOneShot(errorSound, 0.5f);
                     txt.text = "NOT ENOUGH GOLD!";
                 }
 
@@ -55,12 +99,14 @@ public class InfoControllertxt : MonoBehaviour
             {
                 if(GlobalVars.G_Money >= levelAttack * 700)
                 {
+                    UIAudio.PlayOneShot(upgrade, 0.25f);
                     GlobalVars.G_Money -= levelAttack * 700;
                     GlobalVars.CurrentlySelected.GetComponentInChildren<TowerProperties>().level++;
                     txt.text = GlobalVars.CurrentlySelected.name + " has been upgraded to level " + (GlobalVars.CurrentlySelected.GetComponentInChildren<TowerProperties>().level);
                 }
                 else
                 {
+                    UIAudio.PlayOneShot(errorSound, 0.5f);
                     txt.text = "NOT ENOUGH GOLD!";
                 }
             }
@@ -69,12 +115,14 @@ public class InfoControllertxt : MonoBehaviour
             {
                 if(GlobalVars.G_Money >= levelAttack * 1000)
                 {
+                    UIAudio.PlayOneShot(upgrade, 0.25f);
                     GlobalVars.G_Money -= levelAttack * 1000;
                     GlobalVars.CurrentlySelected.GetComponentInChildren<TowerProperties>().level++;
                     txt.text = GlobalVars.CurrentlySelected.name + " has been upgraded to level " + (GlobalVars.CurrentlySelected.GetComponentInChildren<TowerProperties>().level);
                 }
                 else
                 {
+                    UIAudio.PlayOneShot(errorSound, 0.5f);
                     txt.text = "NOT ENOUGH GOLD!";
                 }
             }
@@ -82,12 +130,14 @@ public class InfoControllertxt : MonoBehaviour
             {
                 if(GlobalVars.G_Money >= levelAttack * 2000)
                 {
+                    UIAudio.PlayOneShot(upgrade, 0.25f);
                     GlobalVars.G_Money -= levelAttack * 2000;
                     GlobalVars.CurrentlySelected.GetComponentInChildren<TowerProperties>().level++;
                     txt.text = GlobalVars.CurrentlySelected.name + " has been upgraded to level " + (GlobalVars.CurrentlySelected.GetComponentInChildren<TowerProperties>().level);
                 }
                 else
                 {
+                    UIAudio.PlayOneShot(errorSound, 0.5f);
                     txt.text = "NOT ENOUGH GOLD!";
                 }
             }
@@ -95,12 +145,14 @@ public class InfoControllertxt : MonoBehaviour
             {
                 if (GlobalVars.G_Money >= levelAttack * 500)
                 {
+                    UIAudio.PlayOneShot(upgrade, 0.25f);
                     GlobalVars.G_Money -= levelAttack * 500;
                     GlobalVars.CurrentlySelected.GetComponentInChildren<TowerProperties>().level++;
                     txt.text = GlobalVars.CurrentlySelected.name + " has been upgraded to level " + (GlobalVars.CurrentlySelected.GetComponentInChildren<TowerProperties>().level);
                 }
                 else
                 {
+                    UIAudio.PlayOneShot(errorSound, 0.5f);
                     txt.text = "NOT ENOUGH GOLD!";
                 }
             }
@@ -122,6 +174,7 @@ public class InfoControllertxt : MonoBehaviour
         {
             if (GlobalVars.CurrentlySelected.tag == "Placed")
             {
+                UIAudio.PlayOneShot(mouseClick, 0.25f);
                 upgradeButton.SetActive(true);
                 SellBtn.SetActive(true);
                 if (GlobalVars.CurrentlySelected.name == "TowerBase(Clone)")
@@ -161,10 +214,13 @@ public class InfoControllertxt : MonoBehaviour
             txt.text = "Click tower for info";
         }
     }
-    
+    public void PointerEnter()
+    {
+        UIAudio.PlayOneShot(hoverMouse, 0.5f);
+    }
     public void OnMouseHoverButton(Button btn)
     {
-
+        UIAudio.PlayOneShot(hoverMouse, 0.5f);
         GameObject rangeOff = Camera.main.GetComponent<RaycastingController>().lasttouched;
         Camera.main.GetComponent<RaycastingController>().lasttouched = null;
         if (rangeOff !=null)
@@ -209,6 +265,8 @@ public class InfoControllertxt : MonoBehaviour
         //GlobalVars.CurrentlySelected = btn.gameObject;
         if(GlobalVars.CurrentlySelected != null)
         {
+            UIAudio.PlayOneShot(cashRegister, 0.25f);
+            UIAudio.PlayOneShot(mouseClick, 0.25f);
             GlobalVars.G_Money += GlobalVars.CurrentlySelected.GetComponent<TowerPlaceController>().towerCost / 2;
             Destroy(GlobalVars.CurrentlySelected);
             GlobalVars.CurrentlySelected = null;

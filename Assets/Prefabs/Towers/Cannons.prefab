@@ -251,11 +251,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   level: 1
   range: 0
-  rangeBase: 30
+  rangeBase: 20
   damage: 0
   damageBase: 10
   shotCooldown: 1
   Bullet: {fileID: 4154303135763148689, guid: 726b6421eb8ae104bb44ddaa7697117a, type: 3}
+  lightningCloud: {fileID: 0}
+  Lightningreal: {fileID: 0}
 --- !u!212 &1369904745667485809
 SpriteRenderer:
   m_ObjectHideFlags: 0

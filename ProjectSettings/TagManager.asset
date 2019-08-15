@@ -20,6 +20,7 @@ TagManager:
   - Down
   - Left
   - Right
+  - Environment
   layers:
   - Default
   - TransparentFX
