@@ -23,30 +23,35 @@ public class EnemyController : MonoBehaviour
     public GameObject explosionObj;
     public GameObject FlameExplosion;
     public GameObject ArrowExplosion;
+
     string WhichRow;
     Animator anim;
     void Start()
     {
+        baseHp += GlobalVars.WaveNum * 1;
         anim = GetComponent<Animator>();
         if(gameObject.name == "Yellow_Sun_Ship(Clone)")
         {
-            baseHp = 250 + GlobalVars.WaveNum * 5;
+            baseHp = 250 + GlobalVars.WaveNum * 2;
         }
         else if (gameObject.name == "Red_Skull_Ship(Clone)")
         {
-            baseHp = 100 + GlobalVars.WaveNum * 5;
+            baseHp = 100 + GlobalVars.WaveNum * 2;
         }
         else if (gameObject.name == "Green_Cross_Ship(Clone)")
         {
-            baseHp = 200 + GlobalVars.WaveNum * 5;
+            baseHp = 200 + GlobalVars.WaveNum * 2;
         }
         else if(gameObject.name == "SharkEnemy(Clone)")
         {
-            baseHp = 100 + GlobalVars.WaveNum * 5;
+            baseHp = 100 + GlobalVars.WaveNum * 2;
         }
+
         //sets the hp bars lengths to the baseHp value
-        GreenHP.transform.localScale = new Vector3(baseHp / 100, 3f, 0);
-        RedHP.transform.localScale = new Vector3(baseHp / 100, 3f, 0);
+        GreenHP.transform.localScale = new Vector3(baseHp / 100, 2.5f, 0);
+        GreenHP.transform.position = new Vector3(gameObject.transform.position.x - (baseHp / 100)/2, gameObject.transform.position.y + 1, 0);
+        RedHP.transform.localScale = new Vector3(baseHp / 100, 2.5f, 0);
+        RedHP.transform.position   = new Vector3(gameObject.transform.position.x - (baseHp / 100)/2, gameObject.transform.position.y + 1, 0);
 
         bool searching = true;
         int i = 0;
