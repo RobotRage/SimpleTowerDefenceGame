@@ -34,11 +34,11 @@ public class Spawner : MonoBehaviour
     IEnumerator endRound(float rounddelay)
     {
         yield return new WaitForSeconds(rounddelay);
-        if(delay > 0.5)
+        if(delay > 0.2)
         {
             delay -= 0.05f;
         }
-        if (delayMid > 0.4)
+        if (delayMid > 0.2)
         {
             delayMid -= 0.07f;
         }
@@ -80,12 +80,12 @@ public class Spawner : MonoBehaviour
             if(switches == false && GlobalVars.Hp_Mid > 0)
             {
                 switches = true;
-                StartCoroutine(endRound(5));
+                StartCoroutine(endRound(2.5f));
 
                 if (gameObject.name == "Spawner")
                 {
                     GlobalVars.WaveNum++;
-                    print(GlobalVars.WaveNum);
+                    //print(GlobalVars.WaveNum);
                 }
             }
         }

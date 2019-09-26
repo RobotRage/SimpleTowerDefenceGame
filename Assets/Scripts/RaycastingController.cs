@@ -31,7 +31,7 @@ public class RaycastingController : MonoBehaviour
             if (Input.GetMouseButtonDown(0) && hit.collider != null && hit.collider.name != "RaftTower(Clone)" && hit.collider.tag != "OnRaft")
             {
                 GlobalVars.CurrentlySelected = hit.collider.gameObject;
-                Debug.Log(hit.collider.gameObject);
+                //.Log(hit.collider.gameObject);
                 InfoBox.GetComponent<InfoControllertxt>().OnClickTower();
             }
             if (Input.GetMouseButtonDown(0) && hit.collider == null && !UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject())

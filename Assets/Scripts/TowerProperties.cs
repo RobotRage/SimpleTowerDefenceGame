@@ -11,6 +11,11 @@ public class TowerProperties : MonoBehaviour
     public int level = 1;
     //modifier = flat bonus
 
+    int switches = 0;
+
+    public Sprite Level1;
+    public Sprite Level2;
+
     public float range;
     public float rangeBase = 5;
      float rangeModifier = 0;
@@ -41,28 +46,74 @@ public class TowerProperties : MonoBehaviour
     int Roundangle;
     public GameObject lightningCloud;
     public GameObject Lightningreal;
-    void Shoot()
+
+    SpriteRenderer parentSprender;
+    void Shoot(int switches)
     {
         GameObject InstantiatedBullet;
 
         parentAnim.SetTrigger("Shoot");
         if(parent.name == "TowerBase(Clone)")
         {
-            InstantiatedBullet = Instantiate(Bullet, gameObject.transform.position, Quaternion.identity);
-            InstantiatedBullet.GetComponent<BulletController>().bulletDamage = damage;
-            InstantiatedBullet.GetComponent<BulletController>().Direction = new Vector3(0, 1, 0);
+            if(level>=2)
+            {
+                if(switches==1)
+                {
+                    InstantiatedBullet = Instantiate(Bullet, gameObject.transform.position, Quaternion.identity);
+                    InstantiatedBullet.GetComponent<BulletController>().bulletDamage = damage;
+                    InstantiatedBullet.GetComponent<BulletController>().Direction = new Vector3(1, 1, 0);
 
-            InstantiatedBullet = Instantiate(Bullet, gameObject.transform.position, Quaternion.identity);
-            InstantiatedBullet.GetComponent<BulletController>().bulletDamage = damage;
-            InstantiatedBullet.GetComponent<BulletController>().Direction = new Vector3(0, -1, 0);
+                    InstantiatedBullet = Instantiate(Bullet, gameObject.transform.position, Quaternion.identity);
+                    InstantiatedBullet.GetComponent<BulletController>().bulletDamage = damage;
+                    InstantiatedBullet.GetComponent<BulletController>().Direction = new Vector3(-1, -1, 0);
 
-            InstantiatedBullet = Instantiate(Bullet, gameObject.transform.position, Quaternion.identity);
-            InstantiatedBullet.GetComponent<BulletController>().bulletDamage = damage;
-            InstantiatedBullet.GetComponent<BulletController>().Direction = new Vector3(1, 0, 0);
+                    InstantiatedBullet = Instantiate(Bullet, gameObject.transform.position, Quaternion.identity);
+                    InstantiatedBullet.GetComponent<BulletController>().bulletDamage = damage;
+                    InstantiatedBullet.GetComponent<BulletController>().Direction = new Vector3(1, -1, 0);
 
-            InstantiatedBullet = Instantiate(Bullet, gameObject.transform.position, Quaternion.identity);
-            InstantiatedBullet.GetComponent<BulletController>().bulletDamage = damage;
-            InstantiatedBullet.GetComponent<BulletController>().Direction = new Vector3(-1, 0, 0);
+                    InstantiatedBullet = Instantiate(Bullet, gameObject.transform.position, Quaternion.identity);
+                    InstantiatedBullet.GetComponent<BulletController>().bulletDamage = damage;
+                    InstantiatedBullet.GetComponent<BulletController>().Direction = new Vector3(-1, 1, 0);
+                }
+                else
+                {
+                    InstantiatedBullet = Instantiate(Bullet, gameObject.transform.position, Quaternion.identity);
+                    InstantiatedBullet.GetComponent<BulletController>().bulletDamage = damage;
+                    InstantiatedBullet.GetComponent<BulletController>().Direction = new Vector3(0, 1, 0);
+
+                    InstantiatedBullet = Instantiate(Bullet, gameObject.transform.position, Quaternion.identity);
+                    InstantiatedBullet.GetComponent<BulletController>().bulletDamage = damage;
+                    InstantiatedBullet.GetComponent<BulletController>().Direction = new Vector3(0, -1, 0);
+
+                    InstantiatedBullet = Instantiate(Bullet, gameObject.transform.position, Quaternion.identity);
+                    InstantiatedBullet.GetComponent<BulletController>().bulletDamage = damage;
+                    InstantiatedBullet.GetComponent<BulletController>().Direction = new Vector3(1, 0, 0);
+
+                    InstantiatedBullet = Instantiate(Bullet, gameObject.transform.position, Quaternion.identity);
+                    InstantiatedBullet.GetComponent<BulletController>().bulletDamage = damage;
+                    InstantiatedBullet.GetComponent<BulletController>().Direction = new Vector3(-1, 0, 0);
+                }
+
+            }
+            else
+            {
+                InstantiatedBullet = Instantiate(Bullet, gameObject.transform.position, Quaternion.identity);
+                InstantiatedBullet.GetComponent<BulletController>().bulletDamage = damage;
+                InstantiatedBullet.GetComponent<BulletController>().Direction = new Vector3(0, 1, 0);
+
+                InstantiatedBullet = Instantiate(Bullet, gameObject.transform.position, Quaternion.identity);
+                InstantiatedBullet.GetComponent<BulletController>().bulletDamage = damage;
+                InstantiatedBullet.GetComponent<BulletController>().Direction = new Vector3(0, -1, 0);
+
+                InstantiatedBullet = Instantiate(Bullet, gameObject.transform.position, Quaternion.identity);
+                InstantiatedBullet.GetComponent<BulletController>().bulletDamage = damage;
+                InstantiatedBullet.GetComponent<BulletController>().Direction = new Vector3(1, 0, 0);
+
+                InstantiatedBullet = Instantiate(Bullet, gameObject.transform.position, Quaternion.identity);
+                InstantiatedBullet.GetComponent<BulletController>().bulletDamage = damage;
+                InstantiatedBullet.GetComponent<BulletController>().Direction = new Vector3(-1, 0, 0);
+            }
+            
         }
         if(parent.name == "Cannons(Clone)")
         {
@@ -135,19 +186,53 @@ public class TowerProperties : MonoBehaviour
             if(parent.name == "TowerBase(Clone)")
             {
                 damageMultiplier = (level + 1) / 2;
+                if (level == 2)
+                {
+                    parentAnim.runtimeAnimatorController = Resources.Load("BaseUp1") as RuntimeAnimatorController;
+                }
+                else if (level==3)
+                {
+                    //Debug.Log("__hit upgrade");
+                    parentAnim.runtimeAnimatorController = Resources.Load("BaseUp2") as RuntimeAnimatorController;
+                }
             }
             if (parent.name == "Cannons(Clone)")
             {
-                damageMultiplier = (level + 4f) / 2;
                 shotCooldownBase = 2;
+                if (level == 2)
+                {
+                    parentAnim.runtimeAnimatorController = Resources.Load("CannonUp1") as RuntimeAnimatorController;
+                }
+                else if(level==3)
+                {
+                    parentAnim.runtimeAnimatorController = Resources.Load("CannonsUp2") as RuntimeAnimatorController;
+                }
+                damageMultiplier = (level + 4f) / 2;
+                
             }
             if(parent.name == "Flame_Tower_1(Clone)")
             {
+                if (level == 2)
+                {
+                    parentAnim.runtimeAnimatorController = Resources.Load("FlamerUp1") as RuntimeAnimatorController;
+                }
+                else if (level == 3)
+                {
+                    parentAnim.runtimeAnimatorController = Resources.Load("FlamerUp2") as RuntimeAnimatorController;
+                }
                 damageMultiplier = (level + 4) / 2;
                 shotCooldownBase = 1;
             }
             if (parent.name == "Lightning_Tower(Clone)")
             {
+                if (level == 2)
+                {
+                    parentAnim.runtimeAnimatorController = Resources.Load("LightningUp1") as RuntimeAnimatorController;
+                }
+                else if (level == 3)
+                {
+                    parentAnim.runtimeAnimatorController = Resources.Load("LightningUp2") as RuntimeAnimatorController;
+                }
                 damageMultiplier = (level + 10) / 2;
                 shotCooldownBase = 1;
             }
@@ -159,9 +244,6 @@ public class TowerProperties : MonoBehaviour
         }
 
         //changes the radius of the range circle based on the range
-
-
-
 
         if(shotCooldown > 0.2)
         {
@@ -176,7 +258,7 @@ public class TowerProperties : MonoBehaviour
     //IEnumerator is another thread which delays the execution of code
     IEnumerator Wait(float x)
     {      
-        Shoot();      
+        Shoot(switches);      
         yield return new WaitForSeconds(x);
         coolDownToggle = false;
     }
@@ -205,9 +287,12 @@ public class TowerProperties : MonoBehaviour
     {  
         if (transform.parent.tag == "Placed") // checks tag of parent object
         {
-
-            //checks if more than 0 enemies in tower range
-            if(EnemiesInRange.Count > 0)
+            if (parent.name == "Harpoon_Launcher(Clone)")
+            {
+                parent.GetComponent<Animator>().SetInteger("Level", level);
+            }
+                //checks if more than 0 enemies in tower range
+                if (EnemiesInRange.Count > 0)
             {
                 //targets the first enemy in the list
                 TargetEnemy = EnemiesInRange[0];
@@ -231,7 +316,7 @@ public class TowerProperties : MonoBehaviour
                     }
                    // print(Roundangle);
                     parent.GetComponent<Animator>().SetInteger("Angle",Roundangle);
-                    
+                    parent.GetComponent<Animator>().SetInteger("Level", level);
                     //Quaternion rot = Quaternion.AngleAxis(Roundangle, Vector3.forward) * (Quaternion.AngleAxis(rotationOffset, Vector3.forward));
                     //parent.transform.rotation = Quaternion.RotateTowards(transform.rotation, rot, Time.deltaTime * TowerRotSpeed);
                 }
@@ -245,14 +330,54 @@ public class TowerProperties : MonoBehaviour
                 */
 
                 //if previous corroutine is done, call another corroutine
+               // if (parent.name != "TowerBase(Clone)" && level == 1)
+                //{
+                    if (!coolDownToggle)
+                    {
+                        coolDownToggle = true;
+                        if (level >= 2)
+                        {
+                            StartCoroutine(Wait(shotCooldown / 2 * GlobalVars.DebuffShotSpeed));
+                            if (switches == 0)
+                            {
+                                switches = 1;
+                            }
+                            else
+                            {
+                                switches = 0;
+                            }
+                        }
+                        else
+                        {
+                            StartCoroutine(Wait(shotCooldown * GlobalVars.DebuffShotSpeed));
+                        }
+                    }
+               }
+            }
+            if(level >= 2 && parent.name == "TowerBase(Clone)")
+            {
                 if (!coolDownToggle)
                 {
                     coolDownToggle = true;
+                    if (level >= 2)
+                    {
+                        StartCoroutine(Wait(shotCooldown / 2 * GlobalVars.DebuffShotSpeed));
+                        if (switches == 0)
+                        {
+                            switches = 1;
+                        }
+                        else
+                        {
+                            switches = 0;
+                        }
+                    }
+                    else
+                    {
                         StartCoroutine(Wait(shotCooldown * GlobalVars.DebuffShotSpeed));
-                    
+                    }
                 }
             }
-        }
+        
     }
 
     void Start()
@@ -260,7 +385,6 @@ public class TowerProperties : MonoBehaviour
         updateStats();
         parent = transform.parent.gameObject;
         parentAnim = parent.GetComponent<Animator>();
-
-
+        parentSprender = parent.GetComponent<SpriteRenderer>();
     }
 }

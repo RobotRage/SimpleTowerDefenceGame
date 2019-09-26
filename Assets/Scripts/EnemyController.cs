@@ -28,23 +28,23 @@ public class EnemyController : MonoBehaviour
     Animator anim;
     void Start()
     {
-        baseHp += GlobalVars.WaveNum * 1;
+        baseHp += GlobalVars.WaveNum * 1.1f;
         anim = GetComponent<Animator>();
         if(gameObject.name == "Yellow_Sun_Ship(Clone)")
         {
-            baseHp = 250 + GlobalVars.WaveNum * 2;
+            baseHp = 250 + GlobalVars.WaveNum * GlobalVars.WaveNum/2;
         }
         else if (gameObject.name == "Red_Skull_Ship(Clone)")
         {
-            baseHp = 100 + GlobalVars.WaveNum * 2;
+            baseHp = 100 + GlobalVars.WaveNum * GlobalVars.WaveNum / 2;
         }
         else if (gameObject.name == "Green_Cross_Ship(Clone)")
         {
-            baseHp = 200 + GlobalVars.WaveNum * 2;
+            baseHp = 200 + GlobalVars.WaveNum * GlobalVars.WaveNum / 2;
         }
         else if(gameObject.name == "SharkEnemy(Clone)")
         {
-            baseHp = 100 + GlobalVars.WaveNum * 2;
+            baseHp = 100 + GlobalVars.WaveNum * GlobalVars.WaveNum / 2;
         }
 
         //sets the hp bars lengths to the baseHp value
@@ -190,23 +190,23 @@ public class EnemyController : MonoBehaviour
         }
         if (gameObject.name == "Red_Skull_Ship(Clone)")
         {
-            speed = (GlobalVars.WaveNum / 15) + 1;
+            speed = ((GlobalVars.WaveNum / 15) + 1) * (GlobalVars.WaveNum / 20 + 1);
         }
         else if(gameObject.name == "Yellow_Sun_Ship(Clone)")
         {
-            speed = (GlobalVars.WaveNum / 20) + 1;
+            speed = ((GlobalVars.WaveNum / 20) + 1) * (GlobalVars.WaveNum / 20 + 1);
         }
         else if (gameObject.name == "Green_Cross_Ship(Clone)")
         {
-            speed = (GlobalVars.WaveNum / 9) + 1;
+            speed = ((GlobalVars.WaveNum / 9) + 1) * (GlobalVars.WaveNum / 20 + 1);
         }
         else if(gameObject.name == "SharkEnemy(Clone)")
         {
-            speed = (GlobalVars.WaveNum / 6) + 1;
+            speed = ((GlobalVars.WaveNum / 6) + 1)* (GlobalVars.WaveNum / 20 + 1);
         }
         else
         {
-            speed = (GlobalVars.WaveNum / 10) + 1;
+            speed = ((GlobalVars.WaveNum / 10) + 1)* (GlobalVars.WaveNum / 20 + 1);
         }
 
 

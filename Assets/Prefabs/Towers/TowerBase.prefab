@@ -83,19 +83,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbfe7dfe86f9df148b7f790315381898, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  level: 1
+  Level1: {fileID: -6626596316055459152, guid: f21e5fcddf796a145a236212677db9dd, type: 3}
+  Level2: {fileID: -4655435429136423055, guid: f21e5fcddf796a145a236212677db9dd, type: 3}
   range: 0
   rangeBase: 12
-  rangeModifier: 0
-  rangeMultiplier: 1
   damage: 0
   damageBase: 10
-  damageModifier: 0
-  damageMultiplier: 1
-  speed: 0
-  speedBase: 20
-  speedModifier: 0
-  speedMultiplier: 1
+  shotCooldown: 1
   Bullet: {fileID: 5201609285589320234, guid: 5cd9f34611c28d24aa27d38063eef85d, type: 3}
+  lightningCloud: {fileID: 0}
+  Lightningreal: {fileID: 0}
 --- !u!212 &5300457758251412792
 SpriteRenderer:
   m_ObjectHideFlags: 0

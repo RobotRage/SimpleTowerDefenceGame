@@ -108,8 +108,6 @@ public class GlobalVars : MonoBehaviour
         {
             Destroy(GameObject.Find("SpawnerRight"));
             DebuffShotSpeed = 2;
-        }
-
-        
+        }        
     }
 }
